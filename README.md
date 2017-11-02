@@ -9,7 +9,4 @@ We will use two datasets in this analysis:
 (1) A new set of projections of streamflow within the Columbia River Basin
 (2) A set of temperature projections for the same area.
 
-The research question generally is:
-
-
 Link to the streamflow data along with basic documentation: http://hydro.washington.edu/CRCC/
