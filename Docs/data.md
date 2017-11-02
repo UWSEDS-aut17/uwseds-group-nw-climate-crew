@@ -1,13 +1,13 @@
 Requirements:
-info required to answer questions posed in the README
+info required to answer question posed in the README
 
 Sources:
-data sets to be used, content, availability
+CRCC: Dataset available here http://hydro.washington.edu/CRCC/
+Future temperature fields at 1/16th degree: Available on cluster that Oriana/Andrew use. Will decide to either extract daily timeseries of temperature at streamflow point locations or use maps.
+Fish temperature thresholds: ???? @jennifer
 
 Evaluation:
-| Requirement                      | Columbia River Flow Rates           | Dataset 2 | Dataset 3 |
-|----------------------------------|-------------------------------------|-----------|-----------|
-| Columbia River flow data         | Oriana's dataset (more details tbd) |           |           |
-| WA irrigation water requirements |                                     |           |           |
-| historical rainfall data?        |                                     |           |           |
-
+| Requirement                      | CRCC streamflow dataset          | Future temperature fields | Fish temperature thresholds |
+|----------------------------------|-------------------------------------|-----------|-----------
+| Future projections of streamflow         | Daily timeseries at 400 locations through end of 21st century|      |           
+| Future temperature projections |                                     | Daily temperature information through end of 21st century  |  
