@@ -11,6 +11,6 @@ Sources:
 Evaluation:
 
 | Requirement | CRCC streamflow dataset | NorWeST Stream Temp | Fish temperature thresholds |
-|---|---|---|---|---|
+|---|---|---|---|
 | Future projections of streamflow | Daily time series at 400 locations through end of 21st century| x | x |
 | Future streamflow temperature projections | x | Projections of future streamflow for August at sites throughout PNW  | x |
