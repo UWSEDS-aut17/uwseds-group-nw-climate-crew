@@ -7,8 +7,8 @@
 ### Elements of the Problem Statement:
 - What salmon spawn live where currently?
 - How will climate change (temperature & streamflow) impact:
-  * Where salmon spawns?
-  * When salmon spawns?
+  * Where salmon spawn?
+  * When salmon spawn?
   * The species distribution?
 
 ### Use Cases:
