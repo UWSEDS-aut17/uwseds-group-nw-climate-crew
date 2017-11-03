@@ -1,13 +1,16 @@
 Requirements:
-info required to answer questions posed in the README
+* Future projections of streamflow in the Pacific Northwest (PNW)
+* Future projections of streamflow temperature
+* Information about thresholds for fish habitat.
 
 Sources:
-data sets to be used, content, availability
+* CRCC: Dataset available here http://hydro.washington.edu/CRCC/
+* NorWeST Stream Temp dataset provided by the Rocky Mountain Research Station. Available here: https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html#downloads
+* Fish temperature thresholds: ???? @jennifer
 
 Evaluation:
-| Requirement                      | Columbia River Flow Rates           | Dataset 2 | Dataset 3 |
-|----------------------------------|-------------------------------------|-----------|-----------|
-| Columbia River flow data         | Oriana's dataset (more details tbd) |           |           |
-| WA irrigation water requirements |                                     |           |           |
-| historical rainfall data?        |                                     |           |           |
 
+| Requirement | CRCC streamflow dataset | NorWeST Stream Temp | Fish temperature thresholds |
+|---|---|---|---|
+| Future projections of streamflow | Daily time series at 400 locations through end of 21st century| x | x |
+| Future streamflow temperature projections | x | Projections of future streamflow for August at sites throughout PNW  | x |
