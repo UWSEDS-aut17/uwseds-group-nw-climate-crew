@@ -1,7 +1,7 @@
 
 ### User Profile:
-- general audience, familiar with navigating a webpage
-- does not require specific geology and biology knowledge or the region and the species
+- General audience, familiar with navigating a webpage
+- Does not require specific geology and biology knowledge of the region or the species`
 
 
 ### Elements of the Problem Statement:
