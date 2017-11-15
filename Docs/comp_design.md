@@ -9,6 +9,7 @@ This will run a simple model to link the data uploaded and processed in steps 1 
 4. Mapping/visualizing data:
 This will allow us to share the results in an interactive format. This is necessary for all use cases.
 
+5. User interface: This will let the user interact with the data and get answers to their questions.
 
 ### 1. Reading data:   
 There are three datasets to import for this project: 
@@ -18,10 +19,20 @@ There are three datasets to import for this project:
 
 
 ### 2. Processing data: 
-This is necessary to get our data in the right format. 
+This is necessary to get our data in the right format. For example, calculating annual averages or other basic statistics.
+- This function takes the data read in in step 1 and puts it in format usable by step 3.
+- Name of the fuction: process_data
+- inputs: the complete timeseries output from step 1; these will be daily mean temperature and streamflow at sites throughout the domain within the critical periods for each salmon species. 
+- outputs: a projection (categorical on a scale of 1 to 5) for salmon survival within a given time frame for each site in the domain.
+
 
 ### 3. Determining future projections:
 This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications. 
 
+
+
 ### 4. Mapping/visualizing data:
 This will allow us to share the results in an interactive format. This is necessary for all use cases. 
+
+### 5. User interface:
+This will let the user interact with the data and get answers to their questions.
