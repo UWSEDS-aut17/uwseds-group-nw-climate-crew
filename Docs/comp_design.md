@@ -14,6 +14,7 @@ This will allow us to share the results in an interactive format. This is necess
 
 **5. User interface:** This will let the user interact with the data and get answers to their questions.
 
+-----
 
 ### 1. Reading data:
 There are three datasets to import for this project:
@@ -31,6 +32,7 @@ There are three datasets to import for this project:
 
 This component will load the .csv files using pandas.read_csv and build a pandas dataframe (for all three datasets)
 
+-----
 
 ### 2. Processing data:
 This is necessary to get our data in the right format. For example, calculating annual averages or other basic statistics.
@@ -39,11 +41,12 @@ This is necessary to get our data in the right format. For example, calculating 
 - inputs: the complete timeseries output from step 1
 - outputs: basic statistics conducted upon the inputs. For example, minimum streamflow calculated at sites throughout the domain within the critical periods for each salmon species.
 
+-----
 
 ### 3. Determining future projections:
 This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
 
-
+-----
 
 ### 4. Mapping/visualizing data:
 This will allow us to display the results of our analysis. This is necessary for all use
@@ -71,6 +74,7 @@ Operation of this component should be opaque to the majority of users.  Visualiz
 generated dynamically within the user interface component by triggering callbacks when the user
 changes options or interacts with the visualizations themselves.
 
+----
 
 ### 5. User interface:
 This will let the user interact with the data and get answers to their questions. It is necessary
