@@ -26,11 +26,11 @@ There are three datasets to import for this project:
 	* date
 	* daily max and min
 	* daily mean and standard deviation
-* Salmon species spawning location (table in paper, which is need to be manually input as a .csv file). The variables in this dataset that we will use are:
-	* Salmon specie
+* Salmon species spawning location (table in paper, which needs to be manually input as a .csv file). The variables in this dataset that we will use are:
+	* Salmon species
 	* Spawning river
 
-This component will load the .csv files using pandas.read_csv and build a pandas dataframe (for all three datasets)
+This component (function named import_data)  will load the .csv files using pandas.read_csv and build a pandas dataframe (for all three datasets)
 
 -----
 
@@ -44,7 +44,9 @@ This is necessary to get our data in the right format. For example, calculating 
 -----
 
 ### 3. Determining future projections:
-This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
+This component  will run a simple model to predict salmon populations based on forecasted stream temperature and stream flow data:
+* predict_salmon_pop: predicts salmon population based on stream temperature and flow rate. Input: temperature (float), flow rate (float), and salmon species (factor). Output: predicted salmon population (float)
+* generate_predictions: takes full set of input data and predicts salmon populations for all timepoints. Input: temperature data (dataframe of float values; rows correspond to timepoints, columns correspond to locations), flow rate data (dataframe of float values; rows are timepoints, columns are locations), salmon species (factor). Output: dataframe of predicted salmon populations for the given species (float; rows correspond to timepoints, columns correspond to locations).
 
 -----
 
@@ -107,3 +109,11 @@ view and interact with the analysis in a web browser of their choosing.
 Ultimately the goal of this component is to provide a single entry point to the project for outside
 users.  We wish to have a product that for the purpose of the class presentation can be served on a
 cloud provider but also has easy enough setup that it can be launched locally.
+
+#### Further Details
+The user interface will be formatted as a locally hosted web app with the following sub-components:
+* create_static: generates the static components of the web app, including app header, broad overview description, and instructions for app use. Input: text to be displayed, either as a raw string or a separate text file (for longer descriptions). Output: Dash commands for generating the static components.
+* create_map: generates an interactive map (base state) displaying the Columbia riverbed region with options to overlay color-coded icons representing salmon populations for different regions during a selected time period. Input: default salmon species (factor) and time (int) selections. Output: Dash commands for generating a graph component.
+* update_species: updates the salmon map based on user-selected values for salmon species to display (checklist? Drop-down menu?). Input: user-selected values for salmon species (Factor with a value for each species). Output: Dash commands for generating an updated map graphic.
+* update_time: updates the salmon map based on user-selected values for time-period to display (slider the user can drag, with time determined by slider position). Input: user-selected value for time (int). Output: Dash commands for generating an updated map graphic.
+* launch_app.py: script to set up and locally launch the FutureFish app, with the default values for the interactive visualization component.
