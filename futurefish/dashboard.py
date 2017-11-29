@@ -1,4 +1,6 @@
 
+import os
+import base64
 import dash_core_components as dcc
 import dash_html_components as html
 
@@ -9,9 +11,12 @@ RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
 
 def initialize_layout():
+    logo_file = 'resources/images/logo_3.png'
+    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), logo_file)
+    encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
     header_elements = [
-            html.Img(src='https://lh4.googleusercontent.com/7DX0EuNu06lSaE6Fx2Tx-O1QC0ZIWJKzKWgqH7zRbcs8thHKSZRoy6y5mte4lbV_Q9yAoAiDHiVypX037JKD=w1920-h1006',
-                style={'display': 'block', 'margin': 'auto'}),
+            html.Img(src='data:image/png;base64,{}'.format(encoded_logo.decode()),
+                     style={'height': '300px'}),
             html.Hr()
             ]
     header = html.Div(header_elements, className='header', style=FULL_WIDTH)
