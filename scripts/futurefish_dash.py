@@ -2,8 +2,7 @@ import dash
 import futurefish
 
 css_files = [
-        'https://cdn.rawgit.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/master/futurefish/resources/futurefish.css',
-        'https://livvkit.github.io/LIVVkit/css/livv.css'
+        'https://cdn.rawgit.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/master/futurefish/resources/futurefish.css'
         ]
 
 if __name__ == '__main__':
