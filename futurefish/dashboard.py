@@ -10,7 +10,7 @@ RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
 def initialize_layout():
     header_elements = [
-            html.Img(src='https://lh6.googleusercontent.com/pKPrVVjUdvNcXEz0E-KxbCfTXMPuc301Db6YFM95Njt7HQTb0j4a3-NyT3na8SaBotSpAHOnu0mLky1QtB9u=w2560-h1374',
+            html.Img(src='https://lh4.googleusercontent.com/7DX0EuNu06lSaE6Fx2Tx-O1QC0ZIWJKzKWgqH7zRbcs8thHKSZRoy6y5mte4lbV_Q9yAoAiDHiVypX037JKD=w1920-h1006',
                 style={'display': 'block', 'margin': 'auto'}),
             html.Hr()
             ]
@@ -36,5 +36,5 @@ def initialize_layout():
     mapper = html.Div(map_elements)
     right_pane = html.Div([mapper], className='column_right')
 
-    base_layout = html.Div([header, left_pane, right_pane], className='futurefish', style=APP_STYLE)
+    base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
     return base_layout
