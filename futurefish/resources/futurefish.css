@@ -1,0 +1,44 @@
+body {
+	width: 80%;
+	margin-left: 10%;
+  background: white;
+	height: 100%;
+	padding: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.column_left { 
+	width: 47.75%;
+	float: left;
+	background: white;
+	margin-left: 1%;
+	padding: 5px;
+	padding-right: 1%;
+	height: 100%;
+  border-right: 2px solid #dcdcdc;
+}
+
+.column_right { 
+	width: 47.5%;
+	float: right;
+	background: white;
+	margin-right: 1%;
+	padding: 5px;
+	height: 100%;
+}
+
+html {
+	  height: 100%;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/round.png");
+    background-repeat: repeat;
+}
+
+.header {
+	background: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	width: 75%;
+}
+
