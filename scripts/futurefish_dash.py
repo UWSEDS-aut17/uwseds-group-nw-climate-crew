@@ -1,8 +1,14 @@
 import dash
-import futurefish as ff
+import futurefish
 
+css_files = [
+        'https://cdn.rawgit.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/master/futurefish/resources/futurefish.css',
+        'https://fonts.googleapis.com/css?family=Domine|Montserrat'
+        ]
 
 if __name__ == '__main__':
     app = dash.Dash('Future Fish')
-    app.layout = ff.dashboard.initialize_layout()
-    app.run_server()
+    app.layout = futurefish.dashboard.initialize_layout()
+    for css in css_files:
+        app.css.append_css({"external_url": css})
+    app.server.run(threaded=True)

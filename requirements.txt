@@ -2,3 +2,9 @@ numpy
 scipy
 matplotlib
 pandas
+plotly
+geopandas
+dash
+dash_renderer
+dash_core_components
+dash_html_components
