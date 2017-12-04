@@ -3,6 +3,10 @@ import os
 import base64
 import dash_core_components as dcc
 import dash_html_components as html
+import sys 
+
+sys.path.insert(1,'./futurefish')
+import fish_maps
 
 APP_STYLE = {}
 FULL_WIDTH = {'width': '100%'}
@@ -39,7 +43,8 @@ def initialize_layout():
             html.Hr()
             ]
     mapper = html.Div(map_elements)
-    right_pane = html.Div([mapper], className='column_right')
+    graph = dcc.Graph(id='fish map', figure={'data': fish_maps.generate()})
+    right_pane = html.Div([mapper, graph], className='column_right')
 
     base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
     return base_layout

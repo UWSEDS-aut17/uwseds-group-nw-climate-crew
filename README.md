@@ -1,4 +1,6 @@
-# NW Climate Crew Project
+->![alt text](./Docs/logo/FutureFish_3.png)<-
+
+# FutureFish Project
 
 ![alt text](http://hydro.washington.edu/CRCC/assets/img/CRBaerial.jpg)
 
