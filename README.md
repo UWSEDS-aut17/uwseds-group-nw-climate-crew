@@ -1,4 +1,4 @@
-![alt text](./resources/images/logo_3.png)
+->![alt text](https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/logo_3.png?raw=true)<- 
 
 # FutureFish Project
 
