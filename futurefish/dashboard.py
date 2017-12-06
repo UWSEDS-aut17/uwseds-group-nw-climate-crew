@@ -10,10 +10,12 @@ FULL_WIDTH = {'width': '100%'}
 LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
-DATA_STR = '~/Documents/UW/CSE583/uwseds-group-nw-climate-crew/futurefish/data/tiny_site_test_dataset.csv'
+DATA_FILE = 'data/tiny_site_test_dataset.csv'
+CWD = os.path.dirname(os.path.abspath(__file__))
+DATA_STR = os.path.join(CWD, DATA_FILE)
 DATA = pd.read_csv(DATA_STR)
-TOKEN = 'pk.eyJ1IjoibWticmVubmFuIiwiYSI6ImNqYW12OGxjYjM1MXUzM28yMXhpdWE3NW0ifQ.Elj' \
-        'NVtky3qEFfvJL80RgMQ'
+TOKEN = 'pk.eyJ1IjoibWticmVubmFuIiwiYSI6ImNqYW12OGxjYjM1MXUzM28yMXhpdWE3NW0' \
+        'ifQ.EljNVtky3qEFfvJL80RgMQ'
 
 MAP_HEIGHT = 600
 MAP_WIDTH = 800
@@ -28,23 +30,29 @@ MAP_ZOOM = 5
 
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
-    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), logo_file)
+    logo_path = os.path.join(CWD, logo_file)
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
     header_elements = [
-            html.Img(src='data:image/png;base64,{}'.format(encoded_logo.decode()),
-                     style={'height': '300px'}),
+            html.Img(src='data:image/png;base64,{}'.format(
+                encoded_logo.decode()), style={'height': '300px'}),
             html.Hr()
             ]
     header = html.Div(header_elements, className='header', style=FULL_WIDTH)
 
     info_elements = [
-            html.H1(children='Information'),
-            html.Hr()
+            html.H1(children='Overview'),
+            html.Hr(),
+            html.P("Climate change will have large effects on water resources"
+                   " all over the world. Our interactive FutureFish tool "
+                   "visualizes the predicted future viability of salmon "
+                   "species across the Pacific Northwest.")
             ]
     information = html.Div(info_elements, className='information_panel')
     selector_elements = [
             html.Hr(),
-            make_species_dropdown(),
+            html.Div(make_species_dropdown(),
+                     style={'padding-top': '10px', 'padding-bottom': '10px',
+                            'font-family': 'Montserrat'}),
             make_decade_radio()
             ]
     selector = html.Div(selector_elements, className='selector')
@@ -53,18 +61,22 @@ def initialize_layout():
                          style={'width': '20%'})
 
     map_elements = [
+            html.H1(children='Salmon Viability in the Pacific NW'),
             html.Hr(),
             dcc.Graph(id='fish-map')
             ]
     mapper = html.Div(map_elements)
     right_pane = html.Div([mapper], className='column_right',
-                          style={'width': '75%'})
-    base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
+                          style={'width': '53%'})
+
+    base_layout = html.Div([header, left_pane, right_pane],
+                           className='futurefish')
     return base_layout
 
 
-def make_colorscale(scl0 = 'rgb(0, 102, 0)', scl20 = 'rgb(128, 255, 0)', scl40 = 'rgb(255, 255, 51)',
-                    scl60 = 'rgb(255, 153, 51)', scl80 = 'rgb(255, 6, 6)'):
+def make_colorscale(scl0='rgb(0, 102, 0)', scl20='rgb(128, 255, 0)',
+                    scl40='rgb(255, 255, 51)', scl60='rgb(255, 153, 51)',
+                    scl80='rgb(255, 6, 6)'):
     """Generates a discrete color scale for the map graphic.
     @param scl0 - color string for the minimum value
     @param scl20 - color string for the 20% value
@@ -73,8 +85,9 @@ def make_colorscale(scl0 = 'rgb(0, 102, 0)', scl20 = 'rgb(128, 255, 0)', scl40 =
     @param scl80 - color string for the 80% value
     @return 2D array containing scale-color pairings
     """
-    return [[0, scl0], [0.2, scl0], [0.2, scl20], [0.4, scl20], [0.4, scl40], [0.6, scl40],
-            [0.6, scl60], [0.8, scl60], [0.8, scl80], [1.0, scl80]]
+    return [[0, scl0], [0.2, scl0], [0.2, scl20], [0.4, scl20], [0.4, scl40],
+            [0.6, scl40], [0.6, scl60], [0.8, scl60], [0.8, scl80],
+            [1.0, scl80]]
 
 
 def make_species_dropdown():
@@ -85,13 +98,14 @@ def make_species_dropdown():
     dd = dcc.Dropdown(
         id='species',
         options=[{'label': i, 'value': i} for i in species],
-        value='A'
+        value='Chinook'
     )
     return dd
 
 
 def make_decade_radio():
-    """Generates radio buttions for selecting the decade for which to display data.
+    """Generates radio buttions for selecting the decade for
+    which to display data.
     @return dash.dcc RadioItems object
     """
     decades = DATA['Decade'].unique()
@@ -99,6 +113,8 @@ def make_decade_radio():
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
         value='2030-2059',
-        labelStyle={'width': '30%','display': 'inline-block'}
+        labelStyle={'width': '30%','display': 'inline-block'},
+        style={'padding-top': '10px', 'padding-bottom': '10px',
+               'font-family': 'Montserrat'}
     )
     return radio
