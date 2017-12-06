@@ -1,6 +1,6 @@
 #!/bin/python
 
-def test_coordinate_conversion:
+def test_coordinate_conversion():
     '''
     This will test that the Easting/Northing coordinate conversion to degrees
     lat/lon works correctly.
@@ -12,6 +12,15 @@ def test_coordinate_conversion:
     assertAlmostEqual(known_latitude, calculated_latitude)
     assertAlmostEqual(known_longitude, calculated_longitude)
 
-def test_average_spatial:
-
-def test_average_temporal:
+def test_timeseries_processing():
+    '''
+    This will test that the minimum seven day flow calculator works when
+    applied to a sample dataset.
+    '''
+    np.random.seed(0)
+    sample_df = pd.DataFrame(np.random.rand(365*3)*10+2,
+                            index=pd.date_range('1989-01-01', '1991-12-31'))
+    known_minimums = np.array([[4.27043629], [ 3.26292494], [ 4.48407596]])
+    calculated_minimums = metric_min7day_streamflow(sample_df,
+                                slice('1989-01-01', '1991-12-31')).values
+    assert(np.allclose(calculated_minimums, known_minimums))
