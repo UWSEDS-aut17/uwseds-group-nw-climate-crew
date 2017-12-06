@@ -17,7 +17,6 @@ Climate change will have large effects on water resources
  species across the Pacific Northwest.
 """
 
-
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
     logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), logo_file)
@@ -98,8 +97,8 @@ def make_decade_radio():
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
         value='2030-2059',
-        labelStyle={'width': '30%','display': 'inline-block'},
-        style={'padding-top': '10px', 'padding-bottom': '10px',
-               'font-family': 'Montserrat'}
+        labelStyle={'width': '30%', 'display': 'inline-block'}
+        #style={'padding-top': '10px', 'padding-bottom': '10px',
+        #       'font-family': 'Montserrat'}
     )
     return radio
