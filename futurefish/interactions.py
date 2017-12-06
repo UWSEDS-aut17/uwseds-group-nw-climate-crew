@@ -24,7 +24,7 @@ MAPBOX_DICT = dict(accesstoken=TOKEN,
                    style='light')
 
 
-def initialize_callbacks(app, data):
+def initialize_callbacks(app):
     @app.callback(
         Output('fish-map', 'figure'),
         [Input('species', 'value'),
@@ -34,7 +34,6 @@ def initialize_callbacks(app, data):
                            margin=MAP_MARGIN, font=MAP_FONT,
                            paper_bgcolor=MAP_BG_COLOR,
                            mapbox=MAPBOX_DICT)
-        print(fishplt.generate_map(species, decade))
         return {'data': fishplt.generate_map(species, decade), 'layout': layout}
 
 
