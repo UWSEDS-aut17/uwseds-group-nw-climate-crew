@@ -3,9 +3,9 @@ import plotly.graph_objs as go
 import futurefish.futurefish as ff
 
 
-def make_colorscale(scl0='rgb(0, 102, 0)', scl20='rgb(128, 255, 0)',
-                    scl40='rgb(255, 255, 51)', scl60='rgb(255, 153, 51)',
-                    scl80='rgb(255, 6, 6)'):
+def make_colorscale(scl0='rgb(255, 6, 6)', scl20='rgb(255, 153, 51)',
+                    scl40='rgb(255, 255, 51)', scl60='rgb(128, 255, 0)',
+                    scl80='rgb(0, 102, 0)'):
     """Generates a discrete color scale for the map graphic.
     @param scl0 - color string for the minimum value
     @param scl20 - color string for the 20% value
