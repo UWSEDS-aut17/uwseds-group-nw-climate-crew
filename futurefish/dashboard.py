@@ -15,16 +15,16 @@ DATA = pd.read_csv(DATA_STR)
 TOKEN = 'pk.eyJ1IjoibWticmVubmFuIiwiYSI6ImNqYW12OGxjYjM1MXUzM28yMXhpdWE3NW0ifQ.Elj' \
         'NVtky3qEFfvJL80RgMQ'
 
-MAP_HEIGHT = 500
-MAP_WIDTH = 700
+MAP_HEIGHT = 600
+MAP_WIDTH = 800
 MAP_MARGIN = dict(t=0, b=0, l=0, r=0)
 MAP_FONT = dict(color='#FFFFFF', size=11)
 #MAP_BG_COLOR = '#50667f'
 MAP_BG_COLOR = '#000000'
 MAP_BEARING = 0
-MAP_CENTER = dict(lat=46, lon=-119)
+MAP_CENTER = dict(lat=46.5, lon=-119)
 MAP_PITCH = 0
-MAP_ZOOM = 4.5
+MAP_ZOOM = 5
 
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
@@ -50,7 +50,7 @@ def initialize_layout():
     selector = html.Div(selector_elements, className='selector')
     left_pane = html.Div([information, selector],
                          className='column_left',
-                         style={'width': '25%'})
+                         style={'width': '20%'})
 
     map_elements = [
             html.Hr(),
@@ -58,7 +58,7 @@ def initialize_layout():
             ]
     mapper = html.Div(map_elements)
     right_pane = html.Div([mapper], className='column_right',
-                          style={'width': '70%'})
+                          style={'width': '75%'})
     base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
     return base_layout
 
