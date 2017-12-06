@@ -28,7 +28,7 @@ def update_map(species, decade):
         'cmin': 1,
         'color': data_subset['Viability'],
         'cmax': data_subset['Viability'].max(),
-        'colorbar': dict(title="Viability of Salmon Life",
+        'colorbar': dict(title="Viability of Salmon",
                          tickmode = 'array',
                          tickvals = [1.4,2.2,3.0,3.8,4.6],
                          ticktext = ['Great','Good','Mmm?','Nope','Yikes!'],
