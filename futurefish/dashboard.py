@@ -3,22 +3,14 @@ import os
 import base64
 import dash_core_components as dcc
 import dash_html_components as html
-<<<<<<< HEAD
-import sys 
-
-sys.path.insert(1,'./futurefish')
-import fish_maps
-=======
 import pandas as pd
-
->>>>>>> 83a5218daeb2941da1f0fdd0b257383094d38483
 
 APP_STYLE = {}
 FULL_WIDTH = {'width': '100%'}
 LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
-DATA_STR = '~/Documents/CSE583_SEDS/climate-project/futurefish/data/tiny_site_test_dataset.csv'
+DATA_STR = '~/Documents/UW/CSE583/uwseds-group-nw-climate-crew/futurefish/data/tiny_site_test_dataset.csv'
 DATA = pd.read_csv(DATA_STR)
 TOKEN = 'pk.eyJ1IjoibWticmVubmFuIiwiYSI6ImNqYW12OGxjYjM1MXUzM28yMXhpdWE3NW0ifQ.Elj' \
         'NVtky3qEFfvJL80RgMQ'
@@ -27,7 +19,8 @@ MAP_HEIGHT = 500
 MAP_WIDTH = 700
 MAP_MARGIN = dict(t=0, b=0, l=0, r=0)
 MAP_FONT = dict(color='#FFFFFF', size=11)
-MAP_BG_COLOR = '#50667f'
+#MAP_BG_COLOR = '#50667f'
+MAP_BG_COLOR = '#000000'
 MAP_BEARING = 0
 MAP_CENTER = dict(lat=46, lon=-119)
 MAP_PITCH = 0
@@ -50,7 +43,6 @@ def initialize_layout():
             ]
     information = html.Div(info_elements, className='information_panel')
     selector_elements = [
-            html.H1(children='Selector stuff'),
             html.Hr(),
             make_species_dropdown(),
             make_decade_radio()
@@ -58,22 +50,15 @@ def initialize_layout():
     selector = html.Div(selector_elements, className='selector')
     left_pane = html.Div([information, selector],
                          className='column_left',
-                         style={'width': '42%'})
+                         style={'width': '25%'})
 
     map_elements = [
-            html.H1(children='Map element'),
             html.Hr(),
             dcc.Graph(id='fish-map')
             ]
     mapper = html.Div(map_elements)
-<<<<<<< HEAD
-    graph = dcc.Graph(id='fish map', figure={'data': fish_maps.generate()})
-    right_pane = html.Div([mapper, graph], className='column_right')
-=======
     right_pane = html.Div([mapper], className='column_right',
-                          style={'width': '53%'})
->>>>>>> 83a5218daeb2941da1f0fdd0b257383094d38483
-
+                          style={'width': '70%'})
     base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
     return base_layout
 

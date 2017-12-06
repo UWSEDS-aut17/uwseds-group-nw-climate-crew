@@ -1,4 +1,4 @@
-->![alt text](./Docs/logo/FutureFish_3.png)<-
+->![alt text](./resources/images/logo_3.png)<-
 
 # FutureFish Project
 
