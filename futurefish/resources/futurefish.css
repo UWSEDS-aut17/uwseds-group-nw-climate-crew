@@ -6,6 +6,7 @@ body {
 	padding: 10px;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	box-shadow: 0px 30px 40px rgba(0,0,0,.7);
 }
 
 .column_left {
@@ -30,8 +31,8 @@ body {
 
 html {
 	  height: 100%;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/round.png");
-    background-repeat: repeat;
+      background-image: linear-gradient( rgba(255, 255,255, 0.8),rgba(200, 200, 200, 0.7) ), url("https://c2.staticflickr.com/2/1398/846043956_ab72e42dc5_z.jpg?zz=1");
+      background-repeat: repeat;
 }
 
 .header {
