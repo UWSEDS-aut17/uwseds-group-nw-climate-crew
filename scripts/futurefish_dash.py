@@ -28,7 +28,11 @@ def update_map(species, decade):
         'cmin': 1,
         'color': data_subset['Viability'],
         'cmax': data_subset['Viability'].max(),
-        'colorbar': dict(title="Viability of Salmon Life", tick0=0, dtick=1)
+        'colorbar': dict(title="Viability of Salmon",
+                         tickmode = 'array',
+                         tickvals = [1.4,2.2,3.0,3.8,4.6],
+                         ticktext = ['Great','Good','Mmm?','Nope','Yikes!'],
+                         ticks = 'outside')
     }
     return {
         'data': [go.Scattermapbox(
