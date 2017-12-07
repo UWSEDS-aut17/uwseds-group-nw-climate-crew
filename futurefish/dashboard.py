@@ -63,7 +63,8 @@ def initialize_layout():
     map_elements = [
             html.H1(children='Salmon Viability in the Pacific NW'),
             html.Hr(),
-            dcc.Graph(id='fish-map')
+            dcc.Graph(id='fish-map'),
+            make_zoomlock_radio()
             ]
     mapper = html.Div(map_elements)
     right_pane = html.Div([mapper], className='column_right',
@@ -97,8 +98,24 @@ def make_decade_radio():
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
         value='2030-2059',
-        labelStyle={'width': '30%', 'display': 'inline-block'}
-        #style={'padding-top': '10px', 'padding-bottom': '10px',
-        #       'font-family': 'Montserrat'}
+        labelStyle={'width': '40%', 'display': 'inline-block'},
+        style={'padding-top': '10px', 'padding-bottom': '10px',
+               'font-family': 'Montserrat'}
+    )
+    return radio
+
+
+def make_zoomlock_radio():
+    """Generates radio buttons for selecting whether or not
+    to save map zoom/position settings between filtering steps.
+    @return dash.dcc RadioItems object
+    """
+    radio = dcc.RadioItems(
+        id='lock-zoom',
+        options=[{'label': i, 'value': i}
+                 for i in ['Lock View', 'Refresh View']],
+        value='Lock View',
+        style={'padding-top': '10px', 'padding-bottom': '10px',
+               'font-family': 'Montserrat'}
     )
     return radio

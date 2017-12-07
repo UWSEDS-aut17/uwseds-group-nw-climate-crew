@@ -1,7 +1,7 @@
 
 import plotly.graph_objs as go
 import futurefish.plotting as fishplt
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 
 TOKEN = ('pk.eyJ1IjoibWticmVubmFuIiwiYSI6'
          'ImNqYW12OGxjYjM1MXUzM28yMXhpdWE'
@@ -28,13 +28,20 @@ def initialize_callbacks(app):
     @app.callback(
         Output('fish-map', 'figure'),
         [Input('species', 'value'),
-         Input('decade', 'value')])
-    def update_map(species, decade):
+         Input('decade', 'value'),
+         Input('lock-zoom', 'value')],
+        [State('fish-map', 'relayoutData')])
+    def update_map(species, decade, zoomlock, relayout):
+        if relayout and zoomlock == 'Lock View':
+            mapbox_dict = update_mapbox_dict(relayout)
+        else:
+            mapbox_dict = MAPBOX_DICT
         layout = go.Layout(#height=MAP_HEIGHT, width=MAP_WIDTH,
                            margin=MAP_MARGIN, font=MAP_FONT,
                            paper_bgcolor=MAP_BG_COLOR,
-                           mapbox=MAPBOX_DICT)
-        return {'data': fishplt.generate_map(species, decade), 'layout': layout}
+                           mapbox=mapbox_dict)
+        return {'data': fishplt.generate_map(species, decade),
+                'layout': layout}
 
 
     #@app.callback(
@@ -44,3 +51,11 @@ def initialize_callbacks(app):
     #def update_info(species, decade):
     #    pass
 
+def update_mapbox_dict(relayout):
+    """Generates a new dictionary of mapbox settings from the
+    relayout data returned between interactive calls.
+    @return dictionary of mapbox settings
+    """
+    mb = relayout['mapbox']
+    return dict(accesstoken=TOKEN, bearing=mb['bearing'], center=mb['center'],
+                pitch=mb['pitch'], zoom=mb['zoom'], style='light')
