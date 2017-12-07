@@ -11,10 +11,9 @@ LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
 INFORMATION = """
-Climate change will have large effects on water resources
- all over the world. Our interactive FutureFish tool
- visualizes the predicted future viability of salmon
- species across the Pacific Northwest.
+Climate change will have large effects on water resources all over 
+ the world. Our interactive FutureFish tool visualizes the predicted 
+ future viability of salmon species across the Pacific Northwest.
 """
 
 def initialize_layout():
@@ -23,8 +22,8 @@ def initialize_layout():
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
     header_cols = html.Div([
             html.Img(src='data:image/png;base64,{}'.format(
-                encoded_logo.decode()), style={'height': '300px', 'float': 'left', 'padding': '5px'}),
-            html.P(INFORMATION, style={'width': '400px', 'float': 'left', 'padding': '100px 100px 100px 100px',
+                encoded_logo.decode()), style={'height': '300px', 'float': 'left', 'padding': '5px 50px 5px'}),
+            html.P(INFORMATION, style={'width': '400px', 'float': 'left', 'padding': '100px 50px 100px 100px',
                                        'font-size': '1.2em', 'margin': 'auto'}),
             html.Div([
                 html.A('FutureFish source', href='https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew',
