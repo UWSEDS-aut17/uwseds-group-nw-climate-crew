@@ -31,22 +31,32 @@ In order to visualize the effect of climate change on salmon
 
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
-    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), logo_file)
+    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             logo_file)
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
     header_cols = html.Div([
             html.Img(src='data:image/png;base64,{}'.format(
-                encoded_logo.decode()), style={'height': '300px', 'float': 'left', 'padding': '5px 50px 5px'}),
-            html.P(INFORMATION, style={'width': '400px', 'float': 'left', 'padding': '100px 50px 100px 100px',
-                                       'font-size': '1.2em', 'margin': 'auto'}),
+                encoded_logo.decode()), style={'height': '300px',
+                                               'float': 'left',
+                                               'padding': '5px 50px 5px'}),
+            html.P(INFORMATION, style={'width': '400px', 'float': 'left',
+                                       'padding': '100px 50px 100px 100px',
+                                       'font-size': '1.2em',
+                                       'margin': 'auto'}),
             html.Div([
-                html.A('FutureFish source', href='https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew',
-                    style={'font-family': 'Montserrat', 'color': '#5792f2'}),
+                html.A('FutureFish source',
+                       href='https://github.com/UWSEDS-aut17/uwseds-group'
+                            '-nw-climate-crew',
+                       style={'font-family': 'Montserrat',
+                              'color': '#5792f2'}),
                 html.P(),
                 html.A('UWSEDS course page', href='http://uwseds.github.io/',
                     style={'font-family': 'Montserrat', 'color': '#5792f2'}),
                 html.P(),
-                html.A('NASA Climate Change information', href='https://climate.nasa.gov/',
-                    style={'font-family': 'Montserrat', 'color': '#5792f2'}),
+                html.A('NASA Climate Change information',
+                       href='https://climate.nasa.gov/',
+                       style={'font-family': 'Montserrat',
+                              'color': '#5792f2'}),
                 html.P()
                 ], style={'float': 'right', 'padding': '100px 0px 30px 30px'})
             ])
