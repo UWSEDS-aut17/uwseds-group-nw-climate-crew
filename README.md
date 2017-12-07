@@ -1,5 +1,3 @@
-![alt text](https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/logo_3.png?style=centerme) 
-
 <p align="center">
   <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/logo_3.png">
 </p>
@@ -13,12 +11,11 @@ To answer this question we worked with two datasets which project well into the 
 
 ### How can this tool be used?
 We anticipate this visualization tool being useful for the following applications: 
-1. Educational
-...This tool can be used in a classroom setting and provide an interactive way for students to engage with where salmon live now and in the future.
-2. Recreational
-...Recreational users can examine this interacive map to see how their fishing spots may change in the future.
-3. Environmental  
-
+1. Educational:
+This tool can be used in a classroom setting and provide an interactive way for students to engage with where salmon live now and in the future.
+2. Recreational:
+Recreational users can examine this interacive map to see how their fishing spots may change in the future.
+3. Environmental:  
 Environmental groups can use this tool to show the impacts of climate change on salmon in a visual and interactive way. 
 
 
