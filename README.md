@@ -10,12 +10,16 @@ To answer this question we worked with two datasets which project stream conditi
 2. [Temperature projections](https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html) for the same area.
 
 ### What is FutureFish?
-FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore what streams warming temperatures and diminishing snowpack will affect.  
+FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore where warming stream temperatures and diminishing snowpack will have the largest affect on salmon.  
 
-### How can this FutureFish be used?
+<p align="center">
+  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/futurefish_map.png">
+</p>
+
+### How can FutureFish be used?
 We anticipate this visualization tool being useful for the following applications: 
 1. __Educational__:  
-    This tool can be used in a classroom setting and provide an interactive way for students to engage with where salmon live now and in the future.
+    This tool can be used in a classroom setting and provide an interactive way for students to engage with where salmon live now and where they might live in the future.
 2. __Recreational__:  
     Recreational users can examine this interacive map to see how their fishing spots may change in the future.
 3. __Environmental__:  
@@ -23,7 +27,7 @@ We anticipate this visualization tool being useful for the following application
 
 
 ## How to run FutureFish: 
-1. In a terminal window, navigate the the location you would like to copy the files. 
+1. In a terminal window, navigate the the location you would like to copy the FutureFish files. 
 
 2. Clone the git repository in that location by typing the following in a terminal window: 
 ~~~~
@@ -35,12 +39,12 @@ git clone https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew.git
 python setup.py develop --user
 ~~~~
 
-4. Then you can run the visualization from the uwseds-group-nw-climate-crew directory by typing the following in the terminal. 
+4. Then, you can run the visualization from the uwseds-group-nw-climate-crew directory by typing the following in the terminal. 
 ~~~~
 python ./scripts/futurefish_dash.py
 ~~~~
 
-5. Then copy the following url into a browser to navigate to the site. 
+5. Then copy the following url into a browser to navigate to the application. 
 ~~~~
 http://127.0.0.1:5000/ 
 ~~~~
