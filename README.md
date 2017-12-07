@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/logo_3.png">
+  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/logo_3.png">
 </p>
 
 ## Problem:
@@ -13,7 +13,7 @@ To answer this question we worked with two datasets which project stream conditi
 FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore where warming stream temperatures and diminishing snowpack will have the largest affect on salmon.  
 
 <p align="center">
-  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/Katie/futurefish/resources/images/futurefish_map.png">
+  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/futurefish_map.png">
 </p>
 
 ### How can FutureFish be used?
