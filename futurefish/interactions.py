@@ -10,7 +10,7 @@ TOKEN = ('pk.eyJ1IjoibWticmVubmFuIiwiYSI6'
 MAP_HEIGHT = 500
 MAP_WIDTH = 700
 MAP_MARGIN = dict(t=0, b=0, l=0, r=0)
-MAP_FONT = dict(color='#FFFFFF', size=11)
+MAP_FONT = dict(color='#000000', size=11)
 MAP_BG_COLOR = '#FFFFFF'
 MAP_BEARING = 0
 MAP_CENTER = dict(lat=46, lon=-119)
