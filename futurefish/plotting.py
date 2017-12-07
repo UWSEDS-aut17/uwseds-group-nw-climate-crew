@@ -24,17 +24,19 @@ def generate_map(species, decade):
                               & (ff.DATA['Decade'] == decade)]
         scale = make_colorscale()
         marker_dict = {
-            'size': 8,
+            'size': 10,
             'symbol': 'circle',
             'colorscale': scale,
             'cmin': 1,
             'color': data_subset['Viability'],
             'cmax': data_subset['Viability'].max(),
-            'colorbar': dict(title="Salmon Viability",
+            'colorbar': dict(title = "Salmon Viability",
                      tickmode = 'array',
                      tickvals = [1.4,2.2,3.0,3.8,4.6],
                      ticktext = ['Yikes!','Nope','Hmm?','Good','Great'],
-                     ticks = 'outside')
+                     ticks = 'outside',
+                     titlefont = {'family': 'Montserrat', 'size': 14},
+                     tickfont = {'family': 'Montserrat', 'size': 12})
         }
         return [go.Scattermapbox(
             lon=data_subset['Longitude'], lat=data_subset['Latitude'],

@@ -18,12 +18,15 @@ Climate change will have large effects on water resources all over
 """
 
 OVERVIEW = """
-In order to visualize the affect of climate change on salmon
- in the Pacific Northwest we have determined salmon viability
- based on future streamflow volume and temperature. With these
- projections we determined a 5-point scale of fish viability. 
- This information is shown at each location that measurements
- were available on the FutureFish map to the right. 
+In order to visualize the effect of climate change on salmon
+ in the Pacific Northwest, we have estimated salmon viability
+ as a function of future streamflow volume and temperature. 
+ Viability scores were separated into five categories, with
+ green points representing locations with good fish viability, 
+ and red points representing locations with poor fish viability. 
+ The FutureFish map to the right displays the predicted fish
+ viability score for each location in our available dataset at
+ two time periods in the next century.
 """
 
 def initialize_layout():

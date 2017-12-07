@@ -36,20 +36,12 @@ def initialize_callbacks(app):
             mapbox_dict = update_mapbox_dict(relayout)
         else:
             mapbox_dict = MAPBOX_DICT
-        layout = go.Layout(#height=MAP_HEIGHT, width=MAP_WIDTH,
-                           margin=MAP_MARGIN, font=MAP_FONT,
+        layout = go.Layout(margin=MAP_MARGIN, font=MAP_FONT,
                            paper_bgcolor=MAP_BG_COLOR,
                            mapbox=mapbox_dict)
         return {'data': fishplt.generate_map(species, decade),
                 'layout': layout}
 
-
-    #@app.callback(
-    #    Output('info', 'text'),
-    #    [Input('species', 'value'),
-    #     Input('decade', 'value')])
-    #def update_info(species, decade):
-    #    pass
 
 def update_mapbox_dict(relayout):
     """Generates a new dictionary of mapbox settings from the
