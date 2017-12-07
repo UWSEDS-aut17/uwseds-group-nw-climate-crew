@@ -7,6 +7,7 @@ import dash_html_components as html
 
 APP_STYLE = {}
 FULL_WIDTH = {'width': '100%'}
+FULL_HEIGHT = {'height': '1000px'}
 LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
@@ -14,6 +15,15 @@ INFORMATION = """
 Climate change will have large effects on water resources all over 
  the world. Our interactive FutureFish tool visualizes the predicted 
  future viability of salmon species across the Pacific Northwest.
+"""
+
+OVERVIEW = """
+In order to visualize the affect of climate change on salmon
+ in the Pacific Northwest we have determined salmon viability
+ based on future streamflow volume and temperature. With these
+ projections we determined a 5-point scale of fish viability. 
+ This information is shown at each location that measurements
+ were available on the FutureFish map to the right. 
 """
 
 def initialize_layout():
@@ -44,7 +54,7 @@ def initialize_layout():
     info_elements = [
             html.H1(children='Overview'),
             html.Hr(),
-            html.P('UPDATE ME')
+            html.P(OVERVIEW)
             ]
     information = html.Div(info_elements, className='information_panel')
     selector_elements = [
