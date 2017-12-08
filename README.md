@@ -34,7 +34,7 @@ We anticipate this visualization tool being useful for the following application
 git clone https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew.git
 ~~~~
 
-3. In that directory initiate the setup by typing: 
+3. In the uwseds-group-nw-climate-crew directory, initiate the setup by typing: 
 ~~~~
 python setup.py develop --user
 ~~~~
@@ -44,10 +44,12 @@ python setup.py develop --user
 python ./scripts/futurefish_dash.py
 ~~~~
 
-5. Then copy the following url into a browser to navigate to the application. 
+5. Then copy the following url into your browser to navigate to the application. 
 ~~~~
 http://127.0.0.1:5000/ 
 ~~~~
+
+6. Enjoy exploring FutureFish! 
 
 ### How we got our results: 
 Modelling etc. 
