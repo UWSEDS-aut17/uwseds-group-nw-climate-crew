@@ -32,7 +32,8 @@ def initialize_callbacks(app):
          Input('lock-zoom', 'value')],
         [State('fish-map', 'relayoutData')])
     def update_map(species, decade, zoomlock, relayout):
-        if relayout and zoomlock == 'Lock View':
+        if relayout and ('mapbox' in relayout.keys()) \
+                and zoomlock == 'Lock View':
             mapbox_dict = update_mapbox_dict(relayout)
         else:
             mapbox_dict = MAPBOX_DICT
