@@ -77,7 +77,7 @@ changes options or interacts with the visualizations themselves.
 
 ----
 
-### 5. User interface = Layout generator + Interaction layer + Driver
+### 5. User interface:
 This lets the user interact with the data and get answers to their questions. It is necessary
 for all use cases.
 
@@ -109,7 +109,7 @@ view and interact with the analysis in a web browser of their choosing.
 This component provides a single entry point to the project for outside
 users.  The user can setup and launch the interface locally.
 
-#### Further Details
+### Further Details
 The user interface is formatted as a locally hosted web app with the following sub-components:
 
  * #### Driver (futurefish_dash.py):
