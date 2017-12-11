@@ -9,7 +9,7 @@ All the data processing will only need to be run once and will be run by the dev
 **3. Determining future projections:**
 This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
 
-**4. Mapping/visualizing data:**
+**4. Plotting and visualizing data:**
 This will allow us to share the results in an interactive format. This is necessary for all use cases.
 
 **5. User interface:** This will let the user interact with the data and get answers to their questions.
@@ -108,6 +108,8 @@ view and interact with the analysis in a web browser of their choosing.
 #### Operation
 This component provides a single entry point to the project for outside
 users.  The user can setup and launch the interface locally.
+
+----
 
 ### Further Details
 The user interface is formatted as a locally hosted web app with the following sub-components:

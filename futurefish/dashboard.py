@@ -25,8 +25,9 @@ In order to visualize the effect of climate change on salmon
  green points representing locations with good fish viability, 
  and red points representing locations with poor fish viability. 
  The FutureFish map to the right displays the predicted fish
- viability score for each location in our available dataset at
- two time periods in the next century.
+ viability score for four salmon species (select in dropdown menu) 
+ at each location in our dataset for two time periods in the 
+ next century (select with buttons below dropdown menu).
 """
 
 def initialize_layout():
