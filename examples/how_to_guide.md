@@ -35,21 +35,21 @@ http://127.0.0.1:5000/
 ## FutureFish features: 
 
 1. __Sort by specie__: 
-	Use the dropdown menu to specify which specie of salmon you are interested in. FutureFish contains data for Chinook, Sockeye, Coho, and Pink salmon.
+    Use the dropdown menu to specify which specie of salmon you are interested in. FutureFish contains data for Chinook, Sockeye, Coho, and Pink salmon.
 
 <p align="center">
   <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/dropdown.png">
 </p>
 
 2. __Select time period__: 
-	The FutureFish tool is meant to help visualize where salmon may swim in the future. Choose a time period of interest with the buttons below the dropdown menu. 
+    The FutureFish tool is meant to help visualize where salmon may swim in the future. Choose a time period of interest with the buttons below the dropdown menu. 
 
 <p align="center">
   <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/time_period_button.png">
 </p>
 
 3. __Lock View feature__: 
-	When comparing different species and time periods, you may want to use the _Lock View_ feature. When you select _Lock View_ at the bottom of the map, the area of the map in view will remain the same when you select other options (i.e. another specie or time period). Select _Refresh View_ to return to the default zoom and area shown. 
+    When comparing different species and time periods, you may want to use the _Lock View_ feature. When you select _Lock View_ at the bottom of the map, the area of the map in view will remain the same when you select other options (i.e. another specie or time period). Select _Refresh View_ to return to the default zoom and area shown. 
 
 _Lock View_:
 <p align="center">
