@@ -4,7 +4,7 @@
 This is necessary in order to access the information.
 
 **2. Processing data:**
-This is necessary to get our data in the right format.
+All the data processing will only need to be run once and will be run by the developers. The files will then be saved in the ./futurfish/data folder for. This will get our data in the right format.
 
 **3. Determining future projections:**
 This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
@@ -50,70 +50,83 @@ This component  will run a simple model to predict salmon populations based on f
 
 -----
 
-### 4. Mapping/visualizing data:
+### 4. Plotting and visualizing data (plotting.py): 
 This will allow us to display the results of our analysis. This is necessary for all use
 cases.
 
 #### Function
-The visualization component will take numerical and categorical data provided by the
-analysis/projection component and generate maps, charts, and other graphics that will aid in the
-understanding of the content.
+The visualization component takes numerical and categorical data from .csv file  provided by the
+analysis/projection component and generate an interactive map that will allow the user to explore
+the data. 
 
 #### Name
-This component will reside in a Python module that will be named `visualization`.
+This component resides in the Python module that will be named `plotting`.
 
 #### Inputs
-Each function within this component will take a data object produced by the projection component as
-well as possibly some tunable options and parameters to be given through the user interface
+This component takes a data object produced by the projection component as
+well as some options and parameters to be given through the user interface
 component.
 
 #### Outputs
-This component will exclusively output data to be interpreted visually by the library chosen during
-the technology review.
+This component outputs data to be interpreted visually using plotly and mapbox libraries
 
 #### Operation
-Operation of this component should be opaque to the majority of users.  Visualizations will be
+Operation of this component is opaque to the majority of users.  Visualizations will be
 generated dynamically within the user interface component by triggering callbacks when the user
 changes options or interacts with the visualizations themselves.
 
 ----
 
-### 5. User interface:
-This will let the user interact with the data and get answers to their questions. It is necessary
+### 5. User interface = Layout generator + Interaction layer + Driver
+This lets the user interact with the data and get answers to their questions. It is necessary
 for all use cases.
 
 #### Function
-The user interface component is the primary method that users will interact with the project.  It
-will provide several graphical components that will provide both instruction and functionality.  The
-initial plan is to build a dashboard-like interface with widgets consisting of:
+The user interface component is the primary method that users interact with the project.  It
+provides and interactive map that provides both instruction and functionality.  The interactive
+dashboard-like interface consists of widgets including:
 
  * Text for explanation/instruction
- * Sliders/dropdowns for selecting time periods
- * Buttons/Checkboxes for selecting fish species
- * Various displays from the mapping/visualization components
+ * Radio buttons for selecting time period to display
+ * Dropdown menu for selecting fish species to display
+ * Main display of interactive map
 
 #### Name
-This component will reside in a Python module that will be named `dashboard`.
+This component resides within three different component in a Python module that will be names: 
+`futurefish_dash`,`dashboard`, and `interactions`.
 
 #### Inputs
-This component will take several inputs:
+This component takes several inputs:
 
- * User input for interacting with widgets (using the chosen library for interface design)
- * Data from the future mapping/visualization component (including maps and charts)
+ * User input from interacting with widgets (using plotly and dash)
+ * Data from the plotting and visualization component (interactive map)
 
 #### Outputs
-Operation of this component will result in the serving of a web server that will allow the user to
+Operation of this component results in the serving of a web server that allows the user to
 view and interact with the analysis in a web browser of their choosing.
 
 #### Operation
-Ultimately the goal of this component is to provide a single entry point to the project for outside
-users.  We wish to have a product that for the purpose of the class presentation can be served on a
-cloud provider but also has easy enough setup that it can be launched locally.
+This component provides a single entry point to the project for outside
+users.  The user can setup and launch the interface locally.
 
 #### Further Details
-The user interface will be formatted as a locally hosted web app with the following sub-components:
-* create_static: generates the static components of the web app, including app header, broad overview description, and instructions for app use. Input: text to be displayed, either as a raw string or a separate text file (for longer descriptions). Output: Dash commands for generating the static components.
-* create_map: generates an interactive map (base state) displaying the Columbia riverbed region with options to overlay color-coded icons representing salmon populations for different regions during a selected time period. Input: default salmon species (factor) and time (int) selections. Output: Dash commands for generating a graph component.
-* update_species: updates the salmon map based on user-selected values for salmon species to display (checklist? Drop-down menu?). Input: user-selected values for salmon species (Factor with a value for each species). Output: Dash commands for generating an updated map graphic.
-* update_time: updates the salmon map based on user-selected values for time-period to display (slider the user can drag, with time determined by slider position). Input: user-selected value for time (int). Output: Dash commands for generating an updated map graphic.
-* launch_app.py: script to set up and locally launch the FutureFish app, with the default values for the interactive visualization component.
+The user interface is formatted as a locally hosted web app with the following sub-components:
+
+#### * Driver (futurefish_dash.py):
+Script that sets up and runs the HTML server
+
+#### * Layout Generator (dashboard.py):
+Sets up the initial layout and manages HTML
+
+#### *Interaction Layer (interactions.py):
+Processes datasets based on given inputs from the interactive user interface
+
+#### *Plotting Layer (plotting.py):
+Processes datasets based on given inputs from interaction
+
+<p align="center">
+ <img src="https://github.com/UWSEDs-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/Comp_design_fig.pdf">
+</p> 
+
+
+
