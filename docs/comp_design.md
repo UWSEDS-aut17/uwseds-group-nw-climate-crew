@@ -112,17 +112,17 @@ users.  The user can setup and launch the interface locally.
 #### Further Details
 The user interface is formatted as a locally hosted web app with the following sub-components:
 
- * ####Driver (futurefish_dash.py):
-Script that sets up and runs the HTML server
+ * #### Driver (futurefish_dash.py):
+   Script that sets up and runs the HTML server
 
  * #### Layout Generator (dashboard.py):
-Sets up the initial layout and manages HTML
+   Sets up the initial layout and manages HTML
 
  * #### Interaction Layer (interactions.py):
-Processes datasets based on given inputs from the interactive user interface
+   Processes datasets based on given inputs from the interactive user interface
 
  * #### Plotting Layer (plotting.py):
-Processes datasets based on given inputs from interaction
+   Processes datasets based on given inputs from interaction
 
 <p align="center">
  <img src="https://github.com/UWSEDs-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/comp_design_fig.png">
