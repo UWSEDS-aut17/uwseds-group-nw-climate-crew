@@ -37,7 +37,7 @@ DESCRIPTION HERE
 To get started, please go to the
 repository README_.
 
-.. _README: https://github.com/uwescience/shablona/blob/master/README.md
+.. _README: https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/README.md
 
 License
 =======
@@ -51,7 +51,7 @@ Copyright (c) 2017 -, Andrew Bennett, Katie Brennan,
 Oriana Chegwidden, Jennifer Hsiao,  Serena Liu
 """
 
-NAME = "shablona"
+NAME = "futurefish"
 DESCRIPTION = description
 LONG_DESCRIPTION = long_description
 URL = "http://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew"
