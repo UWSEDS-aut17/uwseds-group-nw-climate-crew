@@ -1,14 +1,13 @@
 
 ### User Profile:
 - General audience, familiar with navigating a webpage
-- Does not require specific geology and biology knowledge of the region or the species`
+- Does not require specific geology and biology knowledge of the region or the salmon species`
 
 
 ### Elements of the Problem Statement:
-- What salmon spawn live where currently?
+- What salmon live where currently?
 - How will climate change (temperature & streamflow) impact:
-  * Where salmon spawn?
-  * When salmon spawn?
+  * Where salmon live?
   * The species distribution?
 
 ### Use Cases:

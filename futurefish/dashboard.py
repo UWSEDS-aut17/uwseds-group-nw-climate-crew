@@ -1,119 +1,144 @@
 
 import os
 import base64
+import futurefish.futurefish as ff
 import dash_core_components as dcc
 import dash_html_components as html
-<<<<<<< HEAD
-import sys 
-
-sys.path.insert(1,'./futurefish')
-import fish_maps
-=======
-import pandas as pd
-
->>>>>>> 83a5218daeb2941da1f0fdd0b257383094d38483
 
 APP_STYLE = {}
 FULL_WIDTH = {'width': '100%'}
+FULL_HEIGHT = {'height': '1000px'}
 LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
-DATA_STR = '~/Documents/CSE583_SEDS/climate-project/futurefish/data/tiny_site_test_dataset.csv'
-DATA = pd.read_csv(DATA_STR)
-TOKEN = 'pk.eyJ1IjoibWticmVubmFuIiwiYSI6ImNqYW12OGxjYjM1MXUzM28yMXhpdWE3NW0ifQ.Elj' \
-        'NVtky3qEFfvJL80RgMQ'
+INFORMATION = """
+Climate change will have large effects on water resources all over 
+ the world. Our interactive FutureFish tool visualizes the predicted 
+ future viability of salmon species across the Pacific Northwest.
+"""
 
-MAP_HEIGHT = 500
-MAP_WIDTH = 700
-MAP_MARGIN = dict(t=0, b=0, l=0, r=0)
-MAP_FONT = dict(color='#FFFFFF', size=11)
-MAP_BG_COLOR = '#50667f'
-MAP_BEARING = 0
-MAP_CENTER = dict(lat=46, lon=-119)
-MAP_PITCH = 0
-MAP_ZOOM = 4.5
+OVERVIEW = """
+In order to visualize the effect of climate change on salmon
+ in the Pacific Northwest, we have estimated salmon viability
+ as a function of future streamflow volume and temperature. 
+ Viability scores were separated into five categories, with
+ green points representing locations with good fish viability, 
+ and red points representing locations with poor fish viability. 
+ The FutureFish map to the right displays the predicted fish
+ viability score for four salmon species (select in dropdown menu) 
+ at each location in our dataset for two time periods in the 
+ next century (select with buttons below dropdown menu).
+"""
 
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
-    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), logo_file)
+    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             logo_file)
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
-    header_elements = [
-            html.Img(src='data:image/png;base64,{}'.format(encoded_logo.decode()),
-                     style={'height': '300px'}),
-            html.Hr()
-            ]
+    header_cols = html.Div([
+            html.Img(src='data:image/png;base64,{}'.format(
+                encoded_logo.decode()), style={'height': '300px',
+                                               'float': 'left',
+                                               'padding': '5px 50px 5px'}),
+            html.P(INFORMATION, style={'width': '400px', 'float': 'left',
+                                       'padding': '100px 50px 100px 100px',
+                                       'font-size': '1.2em',
+                                       'margin': 'auto'}),
+            html.Div([
+                html.A('FutureFish source',
+                       href='https://github.com/UWSEDS-aut17/uwseds-group'
+                            '-nw-climate-crew',
+                       style={'font-family': 'Montserrat',
+                              'color': '#5792f2'}),
+                html.P(),
+                html.A('UWSEDS course page', href='http://uwseds.github.io/',
+                    style={'font-family': 'Montserrat', 'color': '#5792f2'}),
+                html.P(),
+                html.A('NASA Climate Change information',
+                       href='https://climate.nasa.gov/',
+                       style={'font-family': 'Montserrat',
+                              'color': '#5792f2'}),
+                html.P()
+                ], style={'float': 'right', 'padding': '100px 0px 30px 30px'})
+            ])
+
+    header_elements = [header_cols, html.Hr(style={'clear': 'both'})]
     header = html.Div(header_elements, className='header', style=FULL_WIDTH)
 
     info_elements = [
-            html.H1(children='Information'),
-            html.Hr()
+            html.H1(children='Overview'),
+            html.Hr(),
+            html.P(OVERVIEW)
             ]
     information = html.Div(info_elements, className='information_panel')
     selector_elements = [
-            html.H1(children='Selector stuff'),
             html.Hr(),
-            make_species_dropdown(),
+            html.Div(make_species_dropdown(),
+                     style={'padding-top': '10px', 'padding-bottom': '10px',
+                            'font-family': 'Montserrat'}),
             make_decade_radio()
             ]
     selector = html.Div(selector_elements, className='selector')
     left_pane = html.Div([information, selector],
                          className='column_left',
-                         style={'width': '42%'})
+                         style={'width': '25%'})
 
     map_elements = [
-            html.H1(children='Map element'),
+            html.H1(children='Salmon Viability in the Pacific NW'),
             html.Hr(),
-            dcc.Graph(id='fish-map')
+            dcc.Graph(id='fish-map'),
+            make_zoomlock_radio()
             ]
     mapper = html.Div(map_elements)
-<<<<<<< HEAD
-    graph = dcc.Graph(id='fish map', figure={'data': fish_maps.generate()})
-    right_pane = html.Div([mapper, graph], className='column_right')
-=======
     right_pane = html.Div([mapper], className='column_right',
-                          style={'width': '53%'})
->>>>>>> 83a5218daeb2941da1f0fdd0b257383094d38483
+                          style={'width': '70%'})
 
-    base_layout = html.Div([header, left_pane, right_pane], className='futurefish')
+    base_layout = html.Div([header, left_pane, right_pane],
+                           className='futurefish')
     return base_layout
-
-
-def make_colorscale(scl0 = 'rgb(0, 102, 0)', scl20 = 'rgb(128, 255, 0)', scl40 = 'rgb(255, 255, 51)',
-                    scl60 = 'rgb(255, 153, 51)', scl80 = 'rgb(255, 6, 6)'):
-    """Generates a discrete color scale for the map graphic.
-    @param scl0 - color string for the minimum value
-    @param scl20 - color string for the 20% value
-    @param scl40 - color string for the 40% value
-    @param scl60 - color string for the 60% value
-    @param scl80 - color string for the 80% value
-    @return 2D array containing scale-color pairings
-    """
-    return [[0, scl0], [0.2, scl0], [0.2, scl20], [0.4, scl20], [0.4, scl40], [0.6, scl40],
-            [0.6, scl60], [0.8, scl60], [0.8, scl80], [1.0, scl80]]
 
 
 def make_species_dropdown():
     """Generates a dropdown bar to select fish species.
     @return dash.dcc Dropdown object
     """
-    species = DATA['Species'].unique()
+    species = ff.DATA['Species'].unique()
     dd = dcc.Dropdown(
         id='species',
         options=[{'label': i, 'value': i} for i in species],
-        value='A'
+        value='Chinook'
     )
     return dd
 
 
 def make_decade_radio():
-    """Generates radio buttions for selecting the decade for which to display data.
+    """Generates radio buttions for selecting the decade for
+    which to display data.
     @return dash.dcc RadioItems object
     """
-    decades = DATA['Decade'].unique()
+    decades = ff.DATA['Decade'].unique()
     radio = dcc.RadioItems(
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
         value='2030-2059',
-        labelStyle={'width': '30%','display': 'inline-block'}
+        labelStyle={'width': '40%', 'display': 'inline-block'},
+        style={'padding-top': '10px', 'padding-bottom': '10px',
+               'font-family': 'Montserrat'}
+    )
+    return radio
+
+
+def make_zoomlock_radio():
+    """Generates radio buttons for selecting whether or not
+    to save map zoom/position settings between filtering steps.
+    @return dash.dcc RadioItems object
+    """
+    radio = dcc.RadioItems(
+        id='lock-zoom',
+        options=[{'label': i, 'value': i}
+                 for i in ['Lock View', 'Refresh View']],
+        value='Lock View',
+        style={'padding-top': '10px', 'padding-bottom': '10px',
+               'font-family': 'Montserrat'}
     )
     return radio
