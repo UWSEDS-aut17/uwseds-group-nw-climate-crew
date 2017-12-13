@@ -4,33 +4,35 @@
 This is necessary in order to access the information.
 
 **2. Processing data:**
-All the data processing will only need to be run once and will be run by the developers. The files will then be saved in the ./futurfish/data folder for. This will get our data in the right format.
+All the data processing only needs to be run once and was run by the developers. The files will then be saved in the ./futurfish/data folder. This component prepares puts the data in the correct format and prepares it for modelling future vulnerability.
 
-**3. Determining future projections:**
-This will run a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
+**3. Determining future vulnerability projections:**
+This runs a simple model to link the data uploaded and processed in steps 1 and 2. It is necessary for use cases 2 and 3 in our functional specifications.
 
 **4. Plotting and visualizing data:**
-This will allow us to share the results in an interactive format. This is necessary for all use cases.
+This allows us to share the results in an interactive format. This is necessary for all use cases.
 
-**5. User interface:** This will let the user interact with the data and get answers to their questions.
+**5. User interface:** 
+This is where the user interacts with the data and gets answers to their questions.
 
 -----
 
 ### 1. Reading data:
 There are three datasets to import for this project:
-* Stream flow data (.csv file): this data can be found at http://hydro.washington.edu/crcc/. The variables we'll use from this dataset are:
+* Stream flow data (.csv file): this data can be found at http://hydro.washington.edu/crcc/. The variables we use from this dataset are:
 	* day from 1950 through 2099
 	* daily average streamflow (cubic feet per second)
-* Stream flow temperatures (.csv file): this data can be found at https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html#downloads. The variables in this dataset that we will use are:
+	* location
+* Stream flow temperatures (.csv file): this data can be found at https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html#downloads. The variables in this dataset that we use are:
 	* location
 	* date
 	* daily max and min
 	* daily mean and standard deviation
-* Salmon species spawning location (table in paper, which needs to be manually input as a .csv file). The variables in this dataset that we will use are:
+* Salmon species habitat location (table in paper, which needs to be manually input as a .csv file). The variables in this dataset that we use are:
 	* Salmon species
 	* Spawning river
 
-This component (function named import_data)  will load the .csv files using pandas.read_csv and build a pandas dataframe (for all three datasets)
+This component loads the .csv files using pandas.read_csv and build a pandas dataframe (for all three datasets)
 
 -----
 
@@ -43,15 +45,19 @@ This is necessary to get our data in the right format. For example, calculating 
 
 -----
 
-### 3. Determining future projections:
-This component  will run a simple model to predict salmon populations based on forecasted stream temperature and stream flow data:
-* predict_salmon_pop: predicts salmon population based on stream temperature and flow rate. Input: temperature (float), flow rate (float), and salmon species (factor). Output: predicted salmon population (float)
-* generate_predictions: takes full set of input data and predicts salmon populations for all timepoints. Input: temperature data (dataframe of float values; rows correspond to timepoints, columns correspond to locations), flow rate data (dataframe of float values; rows are timepoints, columns are locations), salmon species (factor). Output: dataframe of predicted salmon populations for the given species (float; rows correspond to timepoints, columns correspond to locations).
+### 3. Determining future vulnerability projections:
+This component runs a simple model to predict salmon populations based on forecasted stream temperature and stream flow data:
+* temp_mod(), stream_mod() and stream_mod_pink(): predicts salmon vulnerability based on stream temperature and flow rates. 
+	Inputs: temperature (float) or flow rate (float), and salmon species factors (float). 
+	Outputs: predicted salmon vulnerability (float) on scale of 1 to 5. 
+* fishmod.py: takes full set of input data and outputs a .csv file with salmon vulnerability at each location in our dataset using the functions above and giving equal weight to stream flow and temperature vulnerability values. 
+	Inputs: temperature and flow rate data at each location. 
+	Outputs: .csv file with all salmon species, locations, vulnerability for each time period.  
 
 -----
 
 ### 4. Plotting and visualizing data (plotting.py): 
-This will allow us to display the results of our analysis. This is necessary for all use
+This is used to display the results of our analysis. This is necessary for all use
 cases.
 
 #### Function
