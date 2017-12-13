@@ -1,5 +1,6 @@
 #!/bin/python
 
+
 def test_coordinate_conversion():
     '''
     This will test that the Easting/Northing coordinate conversion to degrees
@@ -11,6 +12,7 @@ def test_coordinate_conversion():
                                                           known_northing)
     assertAlmostEqual(known_latitude, calculated_latitude)
     assertAlmostEqual(known_longitude, calculated_longitude)
+
 
 def test_timeseries_processing():
     '''
