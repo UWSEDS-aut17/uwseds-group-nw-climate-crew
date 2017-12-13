@@ -1,10 +1,10 @@
 import dash
-import futurefish
 import futurefish.dashboard as db
 import futurefish.interactions as fi
 
 css_files = [
-        'https://cdn.rawgit.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/master/futurefish/resources/futurefish.css',
+        ('https://cdn.rawgit.com/UWSEDS-aut17/uwseds-group-nw-climate-crew'
+            '/master/futurefish/resources/futurefish.css'),
         'https://fonts.googleapis.com/css?family=Domine|Montserrat'
         ]
 

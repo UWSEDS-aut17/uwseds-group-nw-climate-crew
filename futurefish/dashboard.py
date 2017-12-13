@@ -12,23 +12,24 @@ LEFT_JUSTIFY = {'width': '30%', 'float': 'left'}
 RIGHT_JUSTIFY = {'width': '30%', 'float': 'right'}
 
 INFORMATION = """
-Climate change will have large effects on water resources all over 
- the world. Our interactive FutureFish tool visualizes the predicted 
+Climate change will have large effects on water resources all over
+ the world. Our interactive FutureFish tool visualizes the predicted
  future viability of salmon species across the Pacific Northwest.
 """
 
 OVERVIEW = """
 In order to visualize the effect of climate change on salmon
  in the Pacific Northwest, we have estimated salmon viability
- as a function of future streamflow volume and temperature. 
+ as a function of future streamflow volume and temperature.
  Viability scores were separated into five categories, with
- green points representing locations with good fish viability, 
- and red points representing locations with poor fish viability. 
+ green points representing locations with good fish viability,
+ and red points representing locations with poor fish viability.
  The FutureFish map to the right displays the predicted fish
- viability score for four salmon species (select in dropdown menu) 
- at each location in our dataset for two time periods in the 
+ viability score for four salmon species (select in dropdown menu)
+ at each location in our dataset for two time periods in the
  next century (select with buttons below dropdown menu).
 """
+
 
 def initialize_layout():
     logo_file = 'resources/images/logo_3.png'
@@ -52,7 +53,8 @@ def initialize_layout():
                               'color': '#5792f2'}),
                 html.P(),
                 html.A('UWSEDS course page', href='http://uwseds.github.io/',
-                    style={'font-family': 'Montserrat', 'color': '#5792f2'}),
+                       style={'font-family': 'Montserrat',
+                              'color': '#5792f2'}),
                 html.P(),
                 html.A('NASA Climate Change information',
                        href='https://climate.nasa.gov/',
