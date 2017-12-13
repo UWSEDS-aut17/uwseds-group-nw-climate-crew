@@ -24,10 +24,10 @@ In order to visualize the effect of climate change on salmon
  Viability scores were separated into five categories, with
  green points representing locations with good fish viability,
  and red points representing locations with poor fish viability.
- The FutureFish map to the right displays the predicted fish
+ The FutureFish map to the right displays the historical and predicted fish
  viability score for four salmon species (select in dropdown menu)
- at each location in our dataset for two time periods in the
- next century (select with buttons below dropdown menu).
+ at each location available in both datasets. Choose between historical and 
+ projected time periods with the buttons below dropdown menu.
 """
 
 
@@ -122,8 +122,8 @@ def make_decade_radio():
     radio = dcc.RadioItems(
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
-        value='2030-2059',
-        labelStyle={'width': '40%', 'display': 'inline-block'},
+        value='1993-2005',
+        labelStyle={'width': '40%','display':'block'},
         style={'padding-top': '10px', 'padding-bottom': '10px',
                'font-family': 'Montserrat'}
     )
