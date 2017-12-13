@@ -17,43 +17,50 @@ FutureFish is a visualization tool that shows how viable salmon life is at hundr
 </p>
 
 ### How can FutureFish be used?
-We anticipate this visualization tool being useful for the following applications: 
+We anticipate this visualization tool being useful for the following applications:
 1. __Educational__:  
     This tool can be used in a classroom setting and provide an interactive way for students to engage with where salmon live now and where they might live in the future.
 2. __Recreational__:  
     Recreational users can examine this interacive map to see how their fishing spots may change in the future.
 3. __Environmental__:  
-    Environmental groups can use this tool to show the impacts of climate change on salmon in a visual and interactive way. 
+    Environmental groups can use this tool to show the impacts of climate change on salmon in a visual and interactive way.
 
 
-## How to run FutureFish: 
-1. In a terminal window, navigate the the location you would like to copy the FutureFish files. 
+### How to run FutureFish:
+1. In a terminal window, navigate the the location you would like to copy the FutureFish files.
 
-2. Clone the git repository in that location by typing the following in a terminal window: 
+2. Clone the git repository in that location by typing the following in a terminal window:
 ~~~~
 git clone https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew.git
 ~~~~
 
-3. In the uwseds-group-nw-climate-crew directory, initiate the setup by typing: 
+3. In the uwseds-group-nw-climate-crew directory, initiate the setup by typing:
 ~~~~
 python setup.py develop --user
 ~~~~
 
-4. Then, you can run the visualization from the uwseds-group-nw-climate-crew directory by typing the following in the terminal. 
+4. Then, you can run the visualization from the uwseds-group-nw-climate-crew directory by typing the following in the terminal.
 ~~~~
 python ./scripts/futurefish_dash.py
 ~~~~
 
-5. Then copy the following url into your browser to navigate to the application. 
+5. Then copy the following url into your browser to navigate to the application.
 ~~~~
-http://127.0.0.1:5000/ 
+http://127.0.0.1:5000/
 ~~~~
 
-6. Enjoy exploring FutureFish! 
+6. Enjoy exploring FutureFish!
 
-### How we got our results: 
-Modelling etc. 
+### How we got our results:
+We used three datasets to get our results:
+1. Streamflow:  
+    Streamflow data accessed from the [Columbia River Climate Change Project](http://hydro.washington.edu/CRCC/).
+2. Stream temperature:  
+    Stream temperature accessed from [NorWeST Stream Temperature Dataset](https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html#downloads) provided by the Rocky Mountain Research Station.
+3. Biological models:  
+    Two biological models were combined to capture the salmon population performance in response to  changes in streamflow (Snyder, 1996) and stream temperature (Swift, 1979).
 
-
+Final model outputs were translated into fish vulnerability ranks of 1-5.  
+1 shows that fish populations are under most threat and 5 shows that the population is in good health.
 
 ![alt text](http://hydro.washington.edu/CRCC/assets/img/CRBaerial.jpg)
