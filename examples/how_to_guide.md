@@ -47,7 +47,7 @@ http://127.0.0.1:5000/
     The FutureFish tool is meant to help visualize where salmon may swim in the future. Choose a time period of interest with the buttons below the dropdown menu. 
 
 <p align="center">
-  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/time_button.png">
+  <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/time_buttons.png">
 </p>
 
 3. __Lock View feature__: 
