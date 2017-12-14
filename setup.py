@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import sys
+from os.path import join as pjoin
+
 try:
     from setuptools import setup
 except:
