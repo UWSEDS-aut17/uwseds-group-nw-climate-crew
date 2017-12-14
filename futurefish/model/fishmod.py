@@ -1,11 +1,16 @@
 import fishmod_utils
 import pandas as pd
-import os 
 
+stream_temp_file = "sites_streamflow_stream_temperature.csv"
+site_info_file = "full_site_test_dataset.csv"
+path = "../data/"
 
-data_wea = pd.read_csv("sites_streamflow_stream_temperature.csv")
-data_latlon = pd.read_csv("full_site_test_dataset.csv")
+data_wea = pd.read_csv(path + stream_temp_file)
+data_latlon = pd.read_csv(path + site_info_file)
 data_latlon = data_latlon.iloc[:,0:4]
+
+#data_wea = pd.read_csv("sites_streamflow_stream_temperature.csv")
+#data_latlon = pd.read_csv("full_site_test_dataset.csv")
 
 data_wea00 = data_wea.ix[:,["Site ID", "Stream Temperature Historical", "Streamflow Historical"]]
 data_wea40 = data_wea.ix[:,["Site ID", "Stream Temperature 2040s", "Streamflow 2040s"]]
@@ -130,8 +135,4 @@ fish_vulnerability_00 = chinook_00.append(sockeye_00).append(coho_00).append(pin
 fish_vulnerability_40 = chinook_40.append(sockeye_40).append(coho_40).append(pink_40)
 fish_vulnerability_80 = chinook_80.append(sockeye_80).append(coho_80).append(pink_80)
 fish_vulnerability = fish_vulnerability_00.append(fish_vulnerability_40).append(fish_vulnerability_80)
-fish_vulnerability.to_csv("fish_vulnerability_new.csv")
-
-
-
-
+fish_vulnerability.to_csv("../data/fish_vulnerability_new.csv")
