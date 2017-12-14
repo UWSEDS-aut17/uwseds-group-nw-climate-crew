@@ -99,7 +99,7 @@ def convert_coordinates(gdf, false_easting):
     return temperature_sites
 
 
-def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
+def create_collated_dataset_temperature(translating_keys_dictionary,
                            streamflow_sites,
                            cleaned_up_gdf_future,
                            cleaned_up_gdf_historical):
@@ -110,7 +110,7 @@ def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
 
     Parameters
     ----------
-    translating_temperature_keys_dictionary : dict
+    translating_keys_dictionary : dict
         Dictionary that translates the somewhat obfuscated column names
         from the convention of the temperature dataset into meaningful
         column names.
@@ -129,13 +129,13 @@ def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
     '''
 
     collated_dataset = pd.DataFrame(index=streamflow_sites['Site ID'],
-        columns=list(translating_temperature_keys_dictionary.values()))
+        columns=list(translating_keys_dictionary.values()))
     for site in streamflow_sites['Site ID']:
-    # Loop through each location in the streamflow set and
-    # select the 10 nearest points within the stream temperature set
-        point = [streamflow_sites[streamflow_sites['Site ID']==
+        # Loop through each location in the streamflow set and
+        # select the 10 nearest points within the stream temperature set
+        point = [streamflow_sites[streamflow_sites['Site ID'] ==
                  site]['Latitude'].values[0],
-                 streamflow_sites[streamflow_sites['Site ID']==
+                 streamflow_sites[streamflow_sites['Site ID'] ==
                  site]['Longitude'].values[0]]
         locate_nearest_neighbor_values(point, cleaned_up_gdf,
                                        temperature_sites, 10)
@@ -143,7 +143,7 @@ def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
     # First set the future time periods' data
         for variable in ['S39_2040DM', 'S41_2080DM']:
             collated_dataset.set_value(site,
-                            translating_temperature_keys_dictionary[variable],
+                            translating_keys_dictionary[variable],
                             nearest_neighbors_data_future[variable].mean())
 
     # Then set the historic values
