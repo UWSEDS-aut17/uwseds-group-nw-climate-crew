@@ -220,4 +220,5 @@ fish_vulnerability_80 = chinook_80.append(sockeye_80). \
 fish_vulnerability = fish_vulnerability_00. \
                      append(fish_vulnerability_40). \
                      append(fish_vulnerability_80)
+
 fish_vulnerability.to_csv("../data/fish_vulnerability_new.csv")
