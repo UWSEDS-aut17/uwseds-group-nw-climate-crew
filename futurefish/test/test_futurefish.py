@@ -4,7 +4,9 @@ import numpy as np
 import pandas as pd
 import unittest
 
+
 class UnitTests(unittest.TestCase):
+
     def test_coordinate_conversion(self):
         """
         This will test that the Easting/Northing coordinate conversion to
@@ -17,7 +19,6 @@ class UnitTests(unittest.TestCase):
         self.assertAlmostEqual(known_lat, calculated_latitude)
         self.assertAlmostEqual(known_long, calculated_longitude)
 
-
     def test_timeseries_processing(self):
         """
         This will test that the minimum seven day flow calculator works
@@ -27,7 +28,7 @@ class UnitTests(unittest.TestCase):
         sample_df = pd.DataFrame(np.random.rand(365*3)*10+2,
                                  index=pd.date_range('1989-01-01',
                                                      '1991-12-31'))
-        known_mins = np.array([[4.27043629], [ 3.26292494], [ 4.48407596]])
+        known_mins = np.array([[4.27043629], [3.26292494], [4.48407596]])
         calc_mins = metric_min7day_streamflow(sample_df,
                                               slice('1989-01-01',
                                                     '1991-12-31')).values

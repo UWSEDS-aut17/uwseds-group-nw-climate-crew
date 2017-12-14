@@ -33,13 +33,14 @@ long_description = """
 FutureFish
 ==========
 FutureFish is a application with an interactive map that allows users
-to see how climat change may affect salmon populations into the 21st 
-century. 
+to explore how climate change may affect salmon population health into
+the 21st century.
 
 To get started, please go to the
 repository README_.
 
-.. _README: https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/README.md
+.. _README:
+https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/README.md
 
 License
 =======
