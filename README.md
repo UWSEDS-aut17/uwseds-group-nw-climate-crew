@@ -12,6 +12,8 @@ To answer this question we worked with two datasets which project stream conditi
 # What is FutureFish?
 FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore where warming stream temperatures and diminishing snowpack will have the largest affect on salmon.  
 
+ [See video demo](https://drive.google.com/open?id=1Xuz8Z-EHlcHD9CyURlsATTTUDfBMOCKj) 
+
 <p align="center">
   <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/futurefish_map.png">
 </p>
