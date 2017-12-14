@@ -9,9 +9,6 @@ data_wea = pd.read_csv(path + stream_temp_file)
 data_latlon = pd.read_csv(path + site_info_file)
 data_latlon = data_latlon.iloc[:,0:4]
 
-#data_wea = pd.read_csv("sites_streamflow_stream_temperature.csv")
-#data_latlon = pd.read_csv("full_site_test_dataset.csv")
-
 data_wea00 = data_wea.ix[:,["Site ID", "Stream Temperature Historical", "Streamflow Historical"]]
 data_wea40 = data_wea.ix[:,["Site ID", "Stream Temperature 2040s", "Streamflow 2040s"]]
 data_wea80 = data_wea.ix[:,["Site ID", "Stream Temperature 2080s", "Streamflow 2080s"]]
