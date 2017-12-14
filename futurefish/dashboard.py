@@ -32,10 +32,20 @@ In order to visualize the effect of climate change on salmon
 
 
 def initialize_layout():
+    """Initializes the layout.
+       Formats different components of the web application into the following
+       categories with the following components: 
+           header = logo, INFORMATION, links to other webpages
+           left pane = OVERVIEW, buttons and selectors
+           right pane = mapping components
+    """
+    
     logo_file = 'resources/images/logo_3.png'
     logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              logo_file)
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
+
+    # Formatting of the top header column 
     header_cols = html.Div([
             html.Img(src='data:image/png;base64,{}'.format(
                 encoded_logo.decode()), style={'height': '300px',
@@ -67,12 +77,16 @@ def initialize_layout():
     header_elements = [header_cols, html.Hr(style={'clear': 'both'})]
     header = html.Div(header_elements, className='header', style=FULL_WIDTH)
 
+    # Formatting overview in left column
     info_elements = [
             html.H1(children='Overview'),
             html.Hr(),
             html.P(OVERVIEW)
             ]
+
     information = html.Div(info_elements, className='information_panel')
+
+    # Formatting the area for buttons and dropdowns
     selector_elements = [
             html.Hr(),
             html.Div(make_species_dropdown(),
@@ -85,6 +99,7 @@ def initialize_layout():
                          className='column_left',
                          style={'width': '25%'})
 
+    # Formatting where map is in right pane
     map_elements = [
             html.H1(children='Salmon Viability in the Pacific NW'),
             html.Hr(),
@@ -95,6 +110,7 @@ def initialize_layout():
     right_pane = html.Div([mapper], className='column_right',
                           style={'width': '70%'})
 
+    # Combine all components of the layout together
     base_layout = html.Div([header, left_pane, right_pane],
                            className='futurefish')
     return base_layout

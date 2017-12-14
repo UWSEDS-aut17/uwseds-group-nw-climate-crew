@@ -18,6 +18,7 @@ opts = dict(name='futurefish',
             url='',
             version='0.0.1',
             packages=['futurefish'],
+            packages_data = {'futurefish': [pjoin('data', '*')]
             scripts=['scripts/futurefish_dash.py'],
             install_requires=['numpy',
                               'pandas',

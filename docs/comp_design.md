@@ -1,5 +1,6 @@
 # Component Design
 
+
 **1. Reading data:**
 This is necessary in order to access the information.
 

@@ -25,6 +25,10 @@ MAPBOX_DICT = dict(accesstoken=TOKEN,
 
 
 def initialize_callbacks(app):
+    """Sets up callback with user interactions. 
+       Responds to the user inputs of the specie,
+       decade, and zoom setting. 
+    """
     @app.callback(
         Output('fish-map', 'figure'),
         [Input('species', 'value'),
