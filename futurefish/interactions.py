@@ -9,7 +9,7 @@ TOKEN = ('pk.eyJ1IjoibWticmVubmFuIiwiYSI6'
 
 MAP_HEIGHT = 500
 MAP_WIDTH = 700
-MAP_MARGIN = dict(t=0, b=0, l=0, r=0)
+MAP_MARGIN = dict(t=0, b=0, r=0)
 MAP_FONT = dict(color='#000000', size=11)
 MAP_BG_COLOR = '#FFFFFF'
 MAP_BEARING = 0
@@ -25,9 +25,9 @@ MAPBOX_DICT = dict(accesstoken=TOKEN,
 
 
 def initialize_callbacks(app):
-    """Sets up callback with user interactions. 
+    """Sets up callback with user interactions.
        Responds to the user inputs of the specie,
-       decade, and zoom setting. 
+       decade, and zoom setting.
     """
     @app.callback(
         Output('fish-map', 'figure'),

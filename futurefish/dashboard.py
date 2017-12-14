@@ -1,4 +1,3 @@
-
 import os
 import base64
 import futurefish.futurefish as ff
@@ -26,7 +25,7 @@ In order to visualize the effect of climate change on salmon
  and red points representing locations with poor fish viability.
  The FutureFish map to the right displays the historical and predicted fish
  viability score for four salmon species (select in dropdown menu)
- at each location available in both datasets. Choose between historical and 
+ at each location available in both datasets. Choose between historical and
  projected time periods with the buttons below dropdown menu.
 """
 
@@ -34,18 +33,18 @@ In order to visualize the effect of climate change on salmon
 def initialize_layout():
     """Initializes the layout.
        Formats different components of the web application into the following
-       categories with the following components: 
+       categories with the following components:
            header = logo, INFORMATION, links to other webpages
            left pane = OVERVIEW, buttons and selectors
            right pane = mapping components
     """
-    
+
     logo_file = 'resources/images/logo_3.png'
     logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              logo_file)
     encoded_logo = base64.b64encode(open(logo_path, 'rb').read())
 
-    # Formatting of the top header column 
+    # Formatting of the top header column
     header_cols = html.Div([
             html.Img(src='data:image/png;base64,{}'.format(
                 encoded_logo.decode()), style={'height': '300px',
@@ -139,7 +138,7 @@ def make_decade_radio():
         id='decade',
         options=[{'label': i, 'value': i} for i in decades],
         value='1993-2005',
-        labelStyle={'width': '40%','display':'block'},
+        labelStyle={'width': '40%', 'display': 'block'},
         style={'padding-top': '10px', 'padding-bottom': '10px',
                'font-family': 'Montserrat'}
     )

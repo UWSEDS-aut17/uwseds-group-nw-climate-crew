@@ -21,8 +21,8 @@ def make_colorscale(scl0='rgb(255, 6, 6)', scl20='rgb(255, 153, 51)',
 
 def generate_map(species, decade):
     """Generates an interactive plot using mapbox with salmon
-       viability displayed as colored points on the map. 
-    """    
+       viability displayed as colored points on the map.
+    """
     data_subset = ff.DATA[(ff.DATA['Species'] == species)
                           & (ff.DATA['Decade'] == decade)]
     scale = make_colorscale()
