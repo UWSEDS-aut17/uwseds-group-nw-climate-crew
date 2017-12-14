@@ -2,6 +2,7 @@
   <img src="https://github.com/UWSEDS-aut17/uwseds-group-nw-climate-crew/blob/master/futurefish/resources/images/logo_3.png">
 </p>
 
+
 ## The Problem:
 Climate change will have large effects on water resources all over the world. For this project we want to investigate how these changes will affect salmon in the Pacific Northwest. This question is often complicated by the fact that the Columbia River is highly regulated with dams which can have detrimental impacts on fish habitat. We will envision a world without any human infrastructure impacts to pose the question: __What impact will climate change _alone_ have on the viable of salmon habitat in the Pacific Northwest?__
 
