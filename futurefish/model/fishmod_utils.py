@@ -6,8 +6,9 @@ def temp_mod(temp, r_max, t_max, t_min, t_opt):
     Outputs fish growth vulnerability on a scale of 1-5.
     1 being the most vulnerable.
     """
-    output = r_max * ((t_max - temp) / (t_max - t_opt)) * ((temp - t_min) / (t_opt - t_min)) ** (
-            (t_opt - t_min) / (t_max - t_opt))
+    output = r_max * ((t_max - temp) / (t_max - t_opt)
+                      ) * ((temp - t_min) / (t_opt - t_min)
+                           ) ** ((t_opt - t_min) / (t_max - t_opt))
     output = pd.DataFrame(output)
     output.columns = ["growth_rate"]
     output[(output < 0)] = 1
@@ -21,10 +22,11 @@ def temp_mod(temp, r_max, t_max, t_min, t_opt):
 
 
 def stream_mod(flow, fo, a, b):
-    """Reads in stram flow. 
+    """Reads in stream flow.
     Outputs fish spawn area vulnerability on a scale of 1-5.
     1 being the most vulnerable.
-    This model relationship only applies to slamon species: Chinook, Sockeye and Coho.
+    This model relationship only applies to salmon species:
+    Chinook, Sockeye and Coho.
     """
     output = a / (1 + ((flow - fo) / b) ** 2)
     output = pd.DataFrame(output)
@@ -45,8 +47,9 @@ def stream_mod_pink(flow, a_max, f_max, f_min, f_opt):
     1 being the most vulnerable.
     This model relationship only applies to pink salmon.
     """
-    output = a_max * ((f_max - flow) / (f_max - f_opt)) * ((flow - f_min) / (f_opt - f_min)) ** (
-            (f_opt - f_min) / (f_max - f_opt))
+    output = a_max * ((f_max - flow) / (f_max - f_opt)
+                      ) * ((flow - f_min) / (f_opt - f_min)
+                           ) ** ((f_opt - f_min) / (f_max - f_opt))
     output = pd.DataFrame(output)
     output.columns = ["spawn_area"]
     output[(output < (f_max / 5))] = 1
