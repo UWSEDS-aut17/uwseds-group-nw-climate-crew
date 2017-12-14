@@ -1,6 +1,6 @@
 import os
 import base64
-import futurefish.futurefish as ff
+import futurefish as ff
 import dash_core_components as dcc
 import dash_html_components as html
 

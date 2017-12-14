@@ -1,5 +1,5 @@
 import plotly.graph_objs as go
-import futurefish.futurefish as ff
+import futurefish as ff
 
 
 def make_colorscale(scl0='rgb(255, 6, 6)', scl20='rgb(255, 153, 51)',
