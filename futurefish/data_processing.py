@@ -98,10 +98,11 @@ def convert_coordinates(gdf, false_easting):
     temperature_sites = np.array(lat_lons)
     return temperature_sites
 
+
 def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
                            streamflow_sites,
                            cleaned_up_gdf_future,
-                           cleaned_up_gdf_historical)
+                           cleaned_up_gdf_historical):
     '''
     This function creates a dataframe with the stream temperature
     estimates. It will be later populated by streamflow projections
@@ -153,6 +154,7 @@ def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
                     'Stream Temperature Historical',
                     nearest_neighbors_data_historical['Historical'].mean())
         return collated_dataset
+
 
 def get_model_ts(infilename, na_values='-9999', comment='#',
                  rename_columns=None, column='streamflow'):
