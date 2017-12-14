@@ -1,10 +1,13 @@
+import pandas as pd
+
+
 def calcLatLon(northing, easting):
-    '''
+    """
     This function converts northings/eastings to latitude and longitudes.
     It is almost entirely based upon a function
     written by Tom Neer found in November 2017 at his blog:
     http://www.neercartography.com/convert-consus-albers-to-wgs84/
-    '''
+    """
     from math import asin, atan2, cos, log, pow, sin, sqrt
 
     # CONSUS Albers variables (EPSG: 5070)
@@ -55,7 +58,7 @@ def calcLatLon(northing, easting):
 
 def get_model_ts(infilename, na_values='-9999', comment='#',
                  rename_columns=None, column='streamflow'):
-    '''Retrieve modeled time series from ASCII file
+    """Retrieve modeled time series from ASCII file
     Parameters
     ----------
     infilename : str
@@ -66,17 +69,17 @@ def get_model_ts(infilename, na_values='-9999', comment='#',
         Comment indicator at the start of the line. Default value is '#'=
     rename_columns: dict or None, optional
         Dictionary to rename columns. Default value is None
-    column = str, optional
+    column: str, optional
         Name of the column that will be returned. Default value is 'streamflow'
     Returns
     -------
     pandas.Series
         Column from file as a pandas.Series
-    '''
+    """
     ts = pd.read_csv(infilename, comment=comment, na_values=na_values,
                      index_col=0, parse_dates=True)
-    # renaming of columns may seem superfluous if we are converting to a Series
-    # anyway, but it allows all the Series to have the same name
+    # renaming of columns may seem superfluous if we are converting to a
+    # Series anyway, but it allows all the Series to have the same name
     if rename_columns:
         ts.columns = [column]
     return pd.Series(ts[column])

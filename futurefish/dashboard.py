@@ -26,14 +26,14 @@ In order to visualize the effect of climate change on salmon
  The FutureFish map to the right displays the historical and predicted fish
  viability score for four salmon species (select in dropdown menu)
  at each location available in both datasets. Choose between historical and
- projected time periods with the buttons below dropdown menu.
+ projected time periods with the buttons below the dropdown menu.
 """
 
 
 def initialize_layout():
     """Initializes the layout.
-       Formats different components of the web application into the following
-       categories with the following components:
+       Formats different components of the web application into the
+       following categories with the following components:
            header = logo, INFORMATION, links to other webpages
            left pane = OVERVIEW, buttons and selectors
            right pane = mapping components
@@ -129,7 +129,7 @@ def make_species_dropdown():
 
 
 def make_decade_radio():
-    """Generates radio buttions for selecting the decade for
+    """Generates radio buttons for selecting the decade for
     which to display data.
     @return dash.dcc RadioItems object
     """

@@ -1,4 +1,3 @@
-
 import plotly.graph_objs as go
 import futurefish.plotting as fishplt
 from dash.dependencies import Input, Output, State

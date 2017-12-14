@@ -48,7 +48,7 @@ for usage, and a DISCLAIMER OF ALL WARRANTIES.
 All trademarks referenced herein are property of their respective holders.
 
 Copyright (c) 2017 -, Andrew Bennett, Katie Brennan,
-Oriana Chegwidden, Jennifer Hsiao,  Serena Liu
+Oriana Chegwidden, Jennifer Hsiao, Serena Liu
 """
 
 NAME = "futurefish"
