@@ -26,7 +26,7 @@ In order to visualize the effect of climate change on salmon
  and red points representing locations with poor fish viability.
  The FutureFish map to the right displays the historical and predicted fish
  viability score for four salmon species (select in dropdown menu)
- at each location available in both datasets. Choose between historical and 
+ at each location available in both datasets. Choose between historical and
  projected time periods with the buttons below dropdown menu.
 """
 
