@@ -63,7 +63,7 @@ We used three datasets to get our results:
 3. Biological models:  
     Two biological models were combined to capture the salmon population performance in response to  changes in streamflow (Snyder, 1996) and stream temperature (Swift, 1979).
 
-Final model outputs were translated into fish vulnerability ranks of 1-5:
+The streamflow and stream temperature datasets were processed using the data_processing.ipyng notebook. This entailed (fish tail pun intended) aligning the datasets on agreeing temporal and spatial scales. The outputs from this notebook were fed to the FishMod.ipynb notebook. This step translated the temperature and streamflow projections, based upon the biological models referenced above, into vulnerability rankings. These fish vulnerability ranks ranged from 1-5:
 1 shows that fish populations are under most threat and 5 shows that the population is in good health.
 
 ![alt text](http://hydro.washington.edu/CRCC/assets/img/CRBaerial.jpg)
