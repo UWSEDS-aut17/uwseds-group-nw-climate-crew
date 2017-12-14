@@ -72,6 +72,88 @@ def calcLatLon(northing, easting):
     return coords
 
 
+def convert_coordinates(gdf, false_easting):
+    '''
+    This function reads a geodataframe, extracts the coordinates from it
+    and then converts those from Albers eastings/northings into
+    latitude/longitude coordinates. It needs a false easting as one of the
+    input parameters. This is specified by the projection within the
+    geodataframe but is not always included in the metadata and so
+    we allow for it to be specified manually.
+
+    Parameters
+    -----------
+    gdf : geopandas dataframe
+    false_easting : float
+    '''
+    # Initialize your list of latitudes and longitudes
+    lat_lons = []
+    for (i, point) in enumerate(cleaned_up_gdf.geometry[:]):
+        # The false easting is from streamflow temperature
+        # dataset documentation within the GIS shapefile
+        northing = point.coords.xy[1][0]
+        easting = point.coords.xy[0][0] - false_easting
+        [lat, lon] = calcLatLon(northing, easting)
+        lat_lons.append([lat, lon])
+    temperature_sites = np.array(lat_lons)
+    return temperature_sites
+
+def create_collated_dataset_temperature(translating_temperature_keys_dictionary,
+                           streamflow_sites,
+                           cleaned_up_gdf_future,
+                           cleaned_up_gdf_historical)
+    '''
+    This function creates a dataframe with the stream temperature
+    estimates. It will be later populated by streamflow projections
+    by later processing steps.
+
+    Parameters
+    ----------
+    translating_temperature_keys_dictionary : dict
+        Dictionary that translates the somewhat obfuscated column names
+        from the convention of the temperature dataset into meaningful
+        column names.
+
+    streamflow_sites : pandas DataFrame
+        The object with all of the information about the
+        streamflow locations' coordinates and their IDs. It is used to
+        link the streamflow sites to the stream temperature sites
+        geographically
+
+    cleaned_up_gdf_future: geopandas dataframe
+        Dataframe with future streamflow temperature projections.
+
+    cleaned_up_gdf_historical: geopandas dataframe
+        Dataframe with historical streamflow temperature projections.
+    '''
+
+    collated_dataset = pd.DataFrame(index=streamflow_sites['Site ID'],
+        columns=list(translating_temperature_keys_dictionary.values()))
+    for site in streamflow_sites['Site ID']:
+    # Loop through each location in the streamflow set and
+    # select the 10 nearest points within the stream temperature set
+        point = [streamflow_sites[streamflow_sites['Site ID']==
+                 site]['Latitude'].values[0],
+                 streamflow_sites[streamflow_sites['Site ID']==
+                 site]['Longitude'].values[0]]
+        locate_nearest_neighbor_values(point, cleaned_up_gdf,
+                                       temperature_sites, 10)
+
+    # First set the future time periods' data
+        for variable in ['S39_2040DM', 'S41_2080DM']:
+            collated_dataset.set_value(site,
+                            translating_temperature_keys_dictionary[variable],
+                            nearest_neighbors_data_future[variable].mean())
+
+    # Then set the historic values
+        nearest_neighbors_data_historical =
+                                cleaned_up_gdf_historical.iloc[list(ndx[0])]
+
+        collated_dataset.set_value(site,
+                    'Stream Temperature Historical',
+                    nearest_neighbors_data_historical['Historical'].mean())
+        return collated_dataset
+
 def get_model_ts(infilename, na_values='-9999', comment='#',
                  rename_columns=None, column='streamflow'):
     '''Retrieve modeled time series from ASCII file
