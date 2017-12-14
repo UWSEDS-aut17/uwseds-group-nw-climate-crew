@@ -6,4 +6,4 @@
 nosetests --with-coverage html test_futurefish.py
 
 #run the PEP8 checker
-pycodestyle test_futurefish.py
+pycodestyle data_processing.py test_futurefish.py
