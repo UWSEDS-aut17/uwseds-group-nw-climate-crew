@@ -1,5 +1,7 @@
 import fishmod_utils
 import pandas as pd
+import os 
+
 
 data_wea = pd.read_csv("sites_streamflow_stream_temperature.csv")
 data_latlon = pd.read_csv("full_site_test_dataset.csv")
