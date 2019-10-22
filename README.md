@@ -4,14 +4,14 @@
 
 
 ## The Problem:
-Climate change will have large effects on water resources all over the world. For this project we want to investigate how these changes will affect salmon in the Pacific Northwest. This question is often complicated by the fact that the Columbia River is highly regulated with dams which can have detrimental impacts on fish habitat. We will envision a world without any human infrastructure impacts to pose the question: __What impact will climate change _alone_ have on the viable of salmon habitat in the Pacific Northwest?__
+Climate change will have large effects on water life all over the world. For this project we want to investigate how these changes will affect salmon in the Pacific Northwest. This question is often complicated by the fact that the Columbia River is highly regulated with dams which can have detrimental impacts on fish habitat. We will envision a world without any human infrastructure impacts to pose the question: __What impact will climate change _alone_ have on the viable of salmon habitat in the Pacific Northwest?__
 
 To answer this question we worked with two datasets which project stream conditions well into the 21st century along with a simple model to estimate salmon viability. The two datasets we used are:
 1. [Projections of streamflow](http://hydro.washington.edu/CRCC/) within the Columbia River Basin
 2. [Temperature projections](https://www.fs.fed.us/rm/boise/AWAE/projects/NorWeST.html) for the same area.
 
 # What is FutureFish?
-FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore where warming stream temperatures and diminishing snowpack will have the largest affect on salmon.  
+FutureFish is a visualization tool that shows how viable salmon life is at hundreds of points around the Pacific Northwest both now and in the future. The data is categorized by salmon specie and a viability metric (see further explanation below). Users can choose a specie of salmon and time period of interest and explore where warming stream temperatures and diminishing snowpack will have the largest effect on salmon.  
 
  [See video demo](https://drive.google.com/open?id=1Xuz8Z-EHlcHD9CyURlsATTTUDfBMOCKj) 
 
